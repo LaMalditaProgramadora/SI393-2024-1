@@ -35,52 +35,21 @@ namespace Lab09.repositories
 
         public List<Entrenador> ListarPorNombrePokemon(String nombrePokemon)
         {
-            List<Entrenador> entrenadoresTemp = new List<Entrenador>();
-            foreach (Entrenador en in entrenadores)
-            {
-                bool existe = en.Pokemons.Exists(po => po.Nombre.Equals(nombrePokemon));
-                if (existe)
-                {
-                    entrenadoresTemp.Add(en);
-                }
-            }
-
-            if (entrenadoresTemp != null)
-            {
-                return entrenadoresTemp;
-            }
-            else
-            {
-                return new List<Entrenador>();
-            }
+            List<Entrenador> entrenadoresTemp =
+                entrenadores.Where(e => e.Pokemons.Any(p => p.Nombre.Equals(nombrePokemon))).ToList();
+            return entrenadoresTemp;
         }
 
         public List<Entrenador> ListarPorMenorCantidadPokemon()
         {
-            List<Entrenador> entrenadoresTemp = new List<Entrenador>();
-            int minPokemons = 6;
-            foreach (Entrenador en in entrenadores)
-            {
-                if (en.Pokemons.Count < minPokemons)
-                {
-                    minPokemons = en.Pokemons.Count;
-                    entrenadoresTemp.Clear();
-                    entrenadoresTemp.Add(en);
-                }
-                else if (en.Pokemons.Count == minPokemons)
-                {
-                    entrenadoresTemp.Add(en);
-                }
-            }
+            int menorCantidadPokemons =
+                entrenadores.Count == 0
+                ? 0
+                : entrenadores.Min(e => e.Pokemons.Count);
 
-            if (entrenadoresTemp != null)
-            {
-                return entrenadoresTemp;
-            }
-            else
-            {
-                return new List<Entrenador>();
-            }
+            List<Entrenador> entrenadoresTemp =
+               entrenadores.Where(e => e.Pokemons.Count == menorCantidadPokemons).ToList();
+            return entrenadoresTemp;
         }
     }
 }

@@ -34,6 +34,9 @@ namespace Lab09
             }
             dgPokemons.DataSource = null;
             dgPokemons.DataSource = pokemons;
+
+            lblTotalPokemon.Text = pokemons.Count.ToString();
+            lblTotalPsPokemon.Text = pokemons.Sum(p => p.PuntosSalud).ToString();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)

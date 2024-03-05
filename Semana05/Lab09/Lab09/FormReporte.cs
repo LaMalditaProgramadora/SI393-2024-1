@@ -30,6 +30,8 @@ namespace Lab09
             }
             dgEntrenadores.DataSource = null;
             dgEntrenadores.DataSource = entrenadores;
+
+            lblTotalEntrenadores.Text = entrenadores.Count.ToString();
         }
 
         private void btnBuscarPorNombrePokemon_Click(object sender, EventArgs e)
