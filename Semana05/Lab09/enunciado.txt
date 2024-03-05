@@ -1,0 +1,27 @@
+Ejercicio MultiLists III
+
+Registro de informaci�n de la Liga Pok�mon
+
+Se requiere una aplicaci�n en C# para realizar el registro de la informaci�n de la Liga Pok�mon. Por lo tanto, se solicita implementar los siguientes requisitos funcionales.
+
+* Registrar los datos de un entrenador. Un entrenador puede tener muchos pok�mons (m�ximo 6).
+* Registrar los datos de un pok�mon. Un pok�mon debe estar asignado a un entrenador.
+* Listar los entrenadores.
+* Listar todos los pok�mons de un entrenador.
+* Listar la cantidad total de puntos de salud de los pok�mons de un entrenador.
+* Listar la informaci�n de los entrenadores que pertenecen a una determinada regi�n.
+* Listar la informaci�n de los entrenadores que tienen un pok�mon espec�fico.
+* Listar la informaci�n de los entrenadores que tienen la menor cantidad de pok�mons registrados.
+
+La informaci�n que se necesita es la siguiente:
+
+* Entrenador: C�digo, Nombre, Edad, Regi�n.
+* Pok�mon: C�digo, Nombre, Apodo, Tipo, Puntos de Salud, Es Legendario.
+
+Considere que las regiones pueden ser: Kanto, Johto, Hoenn, Sinnoh, Teselia/Unova, Kalos, Alola, Galar y Paldea.
+
+Considere que los Tipos de Pok�mon pueden ser: Acero, Agua, Bicho, Drag�n, El�ctrico, Fantasma, Fuego, Hada, Hielo, Lucha, Normal, Planta, Ps�quico, Roca, Siniestro, Tierra, Veneno, Volador
+
+Tomar en cuenta lo siguiente:
+* El c�digo del entrenador es �nico.
+* El c�digo de pok�mon es �nico.
