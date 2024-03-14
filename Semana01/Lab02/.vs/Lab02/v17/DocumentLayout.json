@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Laboratorios\\Lab02\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0246D1-0CE4-41A2-AD0E-17FAC23037F9}|Lab02\\Lab02.csproj|d:\\laboratorios\\lab02\\lab02\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F0246D1-0CE4-41A2-AD0E-17FAC23037F9}|Lab02\\Lab02.csproj|solutionrelative:lab02\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0246D1-0CE4-41A2-AD0E-17FAC23037F9}|Lab02\\Lab02.csproj|d:\\laboratorios\\lab02\\lab02\\entities\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0246D1-0CE4-41A2-AD0E-17FAC23037F9}|Lab02\\Lab02.csproj|solutionrelative:lab02\\entities\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0246D1-0CE4-41A2-AD0E-17FAC23037F9}|Lab02\\Lab02.csproj|d:\\laboratorios\\lab02\\lab02\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0246D1-0CE4-41A2-AD0E-17FAC23037F9}|Lab02\\Lab02.csproj|solutionrelative:lab02\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab02\\Lab02\\Form1.cs",
+              "RelativeDocumentMoniker": "Lab02\\Form1.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab02\\Lab02\\Form1.cs",
+              "RelativeToolTip": "Lab02\\Form1.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAqwBMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T01:44:53.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Empleado.cs",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab02\\Lab02\\entities\\Empleado.cs",
+              "RelativeDocumentMoniker": "Lab02\\entities\\Empleado.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab02\\Lab02\\entities\\Empleado.cs",
+              "RelativeToolTip": "Lab02\\entities\\Empleado.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T01:29:53.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab02\\Lab02\\Form1.cs",
+              "RelativeDocumentMoniker": "Lab02\\Form1.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab02\\Lab02\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Lab02\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T01:29:15.365Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

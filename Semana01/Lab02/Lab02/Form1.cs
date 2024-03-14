@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lab02.controllers;
+using Lab02.entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,47 +14,42 @@ namespace Lab02
 {
     public partial class Form1 : Form
     {
-        private EmpleadoController emplController = new EmpleadoController();
+        private EmpleadoController empleadoController = new EmpleadoController();
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void MostrarNuevoEmpleado(Empleado empl)
+        private void MostrarNuevoEmpleado(Empleado empleado)
         {
-            dgEmpleados.Rows.Add(empl.Nombre, empl.Categoria, empl.MinutosTardanza, empl.LlamadasAtencion, empl.Pago);
-            labelTotal.Text = (int.Parse(labelTotal.Text) + 1).ToString();
+            dgEmpleados.Rows.Add(empleado.Nombre, empleado.Categoria, empleado.MinutosTardanza, empleado.LlamadasAtencion, empleado.Pago);
+            lblTotal.Text = (int.Parse(lblTotal.Text) + 1).ToString();
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void btnProcesar_Click(object sender, EventArgs e)
         {
-            // Validar campos
-
-            if (textBoxNombre.Text == "" || comboBoxCategoria.Text == ""
-                || textBoxMinutosTardanza.Text == "" || textBoxLlamadasAtencion.Text == "")
+            // Validación de campos
+            if (tbNombre.Text == "" || cbCategoria.Text == "" || tbMinutosTardanza.Text == "" || tbLlamadasAtencion.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos");
                 return;
             }
 
-            // Creando al empleado
-            Empleado empl = new Empleado();
-            empl.Nombre = textBoxNombre.Text;
-            empl.Categoria = comboBoxCategoria.Text;
-            empl.MinutosTardanza = int.Parse(textBoxMinutosTardanza.Text);
-            empl.LlamadasAtencion = int.Parse(textBoxLlamadasAtencion.Text);
+            // Crear el empleado
+            Empleado empleado = new Empleado()
+            {
+                Nombre = tbNombre.Text,
+                Categoria = cbCategoria.Text,
+                MinutosTardanza = int.Parse(tbMinutosTardanza.Text),
+                LlamadasAtencion = int.Parse(tbLlamadasAtencion.Text)
+            };
 
-            // Procesamos el pago del nuevo empleado
-            empl = emplController.ProcesarEmpleado(empl);
+            // Procesar el empleado
+            empleado = empleadoController.ProcesarEmpleado(empleado);
 
-            // Agregar todo al Datagrid
-            MostrarNuevoEmpleado(empl);
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            // Agregarlo en el datagrid
+            MostrarNuevoEmpleado(empleado);
         }
     }
 }

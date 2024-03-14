@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4467A0AD-0291-47CD-8029-ECBAAB0F9E8D}</ProjectGuid>
+    <ProjectGuid>{7F0246D1-0CE4-41A2-AD0E-17FAC23037F9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Lab02</RootNamespace>
     <AssemblyName>Lab02</AssemblyName>
@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empleado.cs" />
-    <Compile Include="EmpleadoController.cs" />
+    <Compile Include="controllers\EmpleadoController.cs" />
+    <Compile Include="entities\Empleado.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
