@@ -1,40 +1,37 @@
-﻿using System;
+﻿using Lab05.entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Lab05
+namespace Lab05.controllers
 {
     internal class ElectrodomesticoController
     {
         private List<Electrodomestico> electrodomesticos = new List<Electrodomestico>();
 
-        public List<Electrodomestico> Listar()
+        public List<Electrodomestico> ListarTodo()
         {
             return electrodomesticos;
         }
 
-        public bool Registrar(Electrodomestico elec)
+        public bool Registrar(Electrodomestico electrodomestico)
         {
-            // Verificamos si el código ya está registrado
-            bool existe = electrodomesticos.Exists(ele => ele.Codigo.Equals(elec.Codigo));
+            // Verificación si el código ya está registrado
+            bool existe = electrodomesticos.Exists(ele => ele.Codigo.Equals(electrodomestico.Codigo));
             if (existe)
             {
                 return false;
             }
             else
             {
-                // Agregar electrodoméstico a la lista
-                electrodomesticos.Add(elec);
+                electrodomesticos.Add(electrodomestico);
                 return true;
             }
         }
 
         public void Eliminar(String codigo)
         {
-            electrodomesticos.RemoveAll(elec => elec.Codigo.Equals(codigo));
+            electrodomesticos.RemoveAll(ele => ele.Codigo.Equals(codigo));
         }
 
         public void EliminarTodo()
@@ -44,13 +41,13 @@ namespace Lab05
 
         public List<Electrodomestico> BuscarPorNombre(String nombre)
         {
-            return electrodomesticos.FindAll(elec => elec.Nombre.Contains(nombre));
+            return electrodomesticos.Where(elec => elec.Nombre.Contains(nombre)).ToList();
+            //return electrodomesticos.FindAll(elec => elec.Nombre.Contains(nombre));
         }
 
         public List<Electrodomestico> OrdenarPorPrecio()
         {
             return electrodomesticos.OrderBy(elec => elec.Precio).ToList();
         }
-
     }
 }

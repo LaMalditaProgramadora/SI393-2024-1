@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab05
+namespace Lab05.entities
 {
     internal class Electrodomestico
     {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lab03.controllers;
+using Lab03.entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +14,7 @@ namespace Lab03
 {
     public partial class Form1 : Form
     {
-        private AtencionController atenController = new AtencionController();
+        private AtencionController atencionController = new AtencionController();
 
         public Form1()
         {
@@ -24,32 +26,34 @@ namespace Lab03
             dgAtenciones.DataSource = null;
             dgAtenciones.DataSource = atenciones;
 
-            labelPromedioLavado.Text = atenController.ObtenerPromedioLavado().ToString();
-            labelTotalServicio1.Text = atenController.ObtenerTotalServicio1().ToString();
-            labelTotalServicio2.Text = atenController.ObtenerTotalServicio2().ToString();
-            labelTotalServicio3.Text = atenController.ObtenerTotalServicio3().ToString();
-            labelServicioMinimaDemanda.Text = atenController.ServicioMenorDemanda();
+            lblTotalServicio1.Text = atencionController.ObtenerTotalServicio1().ToString();
+            lblTotalServicio2.Text = atencionController.ObtenerTotalServicio2().ToString();
+            lblTotalServicio3.Text = atencionController.ObtenerTotalServicio3().ToString();
+            lblPromedioServicio1.Text = atencionController.ObtenerPromedioLavado().ToString();
+            lblServicioMenorDemanda.Text = atencionController.ObtenerServicioMenorDemanda().ToString();
         }
 
-        private void buttonRegistrar_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            // Validar campos
-            if (comboBoxTipoAuto.Text == "" || comboBoxTipoServicio.Text == "")
+            // Validación de campos
+            if (cbTipoAuto.Text == "" || cbTipoServicio.Text == "")
             {
-                MessageBox.Show("Ingrese todos los campos");
+                MessageBox.Show("ingrese todos los campos");
                 return;
             }
 
-            // Creación de la atención
-            Atencion atencion = new Atencion();
-            atencion.TipoAuto = comboBoxTipoAuto.Text;
-            atencion.TipoServicio = comboBoxTipoServicio.Text;
+            // Crear la atención
+            Atencion atencion = new Atencion()
+            {
+                TipoAuto = cbTipoAuto.Text,
+                TipoServicio = cbTipoServicio.Text
+            };
 
             // Registrar en el arreglo
-            atenController.Registrar(atencion);
+            atencionController.Registrar(atencion);
 
-            // Mostrar en el datagrid
-            MostrarEnDataGrid(atenController.ObtenerTodo());
+            // Mostramos
+            MostrarEnDataGrid(atencionController.ListarTodo());
         }
     }
 }

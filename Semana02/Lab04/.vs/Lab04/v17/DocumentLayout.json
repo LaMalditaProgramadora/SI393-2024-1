@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Laboratorios\\Lab04\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC25930-A6A0-4C34-9158-6C80C5B37793}|Lab04\\Lab04.csproj|d:\\laboratorios\\lab04\\lab04\\controllers\\alumnocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC25930-A6A0-4C34-9158-6C80C5B37793}|Lab04\\Lab04.csproj|solutionrelative:lab04\\controllers\\alumnocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC25930-A6A0-4C34-9158-6C80C5B37793}|Lab04\\Lab04.csproj|d:\\laboratorios\\lab04\\lab04\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC25930-A6A0-4C34-9158-6C80C5B37793}|Lab04\\Lab04.csproj|solutionrelative:lab04\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC25930-A6A0-4C34-9158-6C80C5B37793}|Lab04\\Lab04.csproj|d:\\laboratorios\\lab04\\lab04\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4FC25930-A6A0-4C34-9158-6C80C5B37793}|Lab04\\Lab04.csproj|solutionrelative:lab04\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC25930-A6A0-4C34-9158-6C80C5B37793}|Lab04\\Lab04.csproj|d:\\laboratorios\\lab04\\lab04\\entities\\alumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC25930-A6A0-4C34-9158-6C80C5B37793}|Lab04\\Lab04.csproj|solutionrelative:lab04\\entities\\alumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab04\\Lab04\\Form1.cs",
+              "RelativeDocumentMoniker": "Lab04\\Form1.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab04\\Lab04\\Form1.cs",
+              "RelativeToolTip": "Lab04\\Form1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFoAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T18:42:18.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AlumnoController.cs",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab04\\Lab04\\controllers\\AlumnoController.cs",
+              "RelativeDocumentMoniker": "Lab04\\controllers\\AlumnoController.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab04\\Lab04\\controllers\\AlumnoController.cs",
+              "RelativeToolTip": "Lab04\\controllers\\AlumnoController.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAADwvzkAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T18:19:18.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Alumno.cs",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab04\\Lab04\\entities\\Alumno.cs",
+              "RelativeDocumentMoniker": "Lab04\\entities\\Alumno.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab04\\Lab04\\entities\\Alumno.cs",
+              "RelativeToolTip": "Lab04\\entities\\Alumno.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T18:18:29.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab04\\Lab04\\Form1.cs",
+              "RelativeDocumentMoniker": "Lab04\\Form1.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab04\\Lab04\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Lab04\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T18:17:15.832Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

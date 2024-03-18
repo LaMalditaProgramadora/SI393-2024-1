@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D57AE722-C3E5-4A30-B0DE-02D383114287}</ProjectGuid>
+    <ProjectGuid>{D8F28EE4-E05C-43CA-BFF9-2831F586C77E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Lab05</RootNamespace>
     <AssemblyName>Lab05</AssemblyName>
@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Electrodomestico.cs" />
-    <Compile Include="ElectrodomesticoController.cs" />
+    <Compile Include="controllers\ElectrodomesticoController.cs" />
+    <Compile Include="entities\Electrodomestico.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

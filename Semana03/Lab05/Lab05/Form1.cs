@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lab05.controllers;
+using Lab05.entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,114 +14,133 @@ namespace Lab05
 {
     public partial class Form1 : Form
     {
-        private ElectrodomesticoController electController = new ElectrodomesticoController();
+
+        private ElectrodomesticoController eleController = new ElectrodomesticoController();
 
         public Form1()
         {
             InitializeComponent();
         }
-        private void MostrarEnDataGrid(List<Electrodomestico> electrodomesticos)
+
+        private void MostrarElectrodomesticosEnDataGrid(List<Electrodomestico> electrodomesticos)
         {
-            if (electrodomesticos.Count == 0) return;
-
             dgElectrodomesticos.DataSource = null;
-            dgElectrodomesticos.DataSource = electrodomesticos;
 
-            // Halar total de la lista
-            labelTotalRegistros.Text = electrodomesticos.Count.ToString();
+            if (electrodomesticos.Count == 0)
+            {
+                lblTotalRegistros.Text = "0";
+                lblTotalStock.Text = "0";
+                return;
+            }
+            else
+            {
 
-            // Halar stock de la lista
-            int stockTotal = 0;
-            electrodomesticos.ForEach(elec => stockTotal += elec.Stock);
-            labelTotalStock.Text = stockTotal.ToString();
+                dgElectrodomesticos.DataSource = electrodomesticos;
+
+                // Total de registros
+                lblTotalRegistros.Text = electrodomesticos.Count.ToString();
+
+                // Total en stock
+                int stockTotal = 0;
+                for (int i = 0; i < electrodomesticos.Count; i++)
+                {
+                    stockTotal += electrodomesticos[i].Stock;
+                }
+
+                //electrodomesticos.ForEach(elec => stockTotal += elec.Stock);
+
+                lblTotalStock.Text = stockTotal.ToString();
+            }
         }
 
-        private void buttonRegistrar_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
             // Validación
-            if (textBoxCodigo.Text == "" || textBoxNombre.Text == ""
-                || numericUpDownStock.Text == "" || textBoxPrecio.Text == "")
+            if (tbCodigo.Text == "" || tbNombre.Text == "" || tbPrecio.Text == "" || tbStock.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos");
                 return;
             }
 
             // Creamos el objeto
-            Electrodomestico elec = new Electrodomestico()
+            Electrodomestico electrodomestico = new Electrodomestico()
             {
-                Codigo = textBoxCodigo.Text,
-                Nombre = textBoxNombre.Text,
-                Stock = (int)numericUpDownStock.Value,
-                Precio = double.Parse(textBoxPrecio.Text)
+                Codigo = tbCodigo.Text,
+                Nombre = tbNombre.Text,
+                Precio = double.Parse(tbPrecio.Text),
+                Stock = int.Parse(tbStock.Text)
             };
 
-
             // Registramos
-            bool registrado = electController.Registrar(elec);
+            bool registrado = eleController.Registrar(electrodomestico);
+
             if (!registrado)
             {
                 MessageBox.Show("Código ya registrado");
                 return;
             }
 
-            // Actualizamos en el data grid
-            MostrarEnDataGrid(electController.Listar());
-
+            // Mostramos en Datagrid
+            MostrarElectrodomesticosEnDataGrid(eleController.ListarTodo());
         }
 
-        private void buttonEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             // Validación
             if (dgElectrodomesticos.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Seleccione electrodoméstico a eliminar");
+                MessageBox.Show("Seleccione registro a eliminar");
                 return;
             }
 
             String codigo = dgElectrodomesticos.SelectedRows[0].Cells[0].Value.ToString();
 
             // Eliminamos
-            electController.Eliminar(codigo);
+            eleController.Eliminar(codigo);
 
-            // Actualizamos en el data grid
-            MostrarEnDataGrid(electController.Listar());
+            // Mostramos en Datagrid
+            MostrarElectrodomesticosEnDataGrid(eleController.ListarTodo());
         }
 
-        private void buttonEliminarTodo_Click(object sender, EventArgs e)
+        private void btnEliminarTodo_Click(object sender, EventArgs e)
         {
             // Eliminamos
-            electController.EliminarTodo();
+            eleController.EliminarTodo();
 
-            // Actualizamos en el data grid
-            MostrarEnDataGrid(electController.Listar());
+            // Mostramos en Datagrid
+            MostrarElectrodomesticosEnDataGrid(eleController.ListarTodo());
         }
 
-        private void buttonOrdenar_Click(object sender, EventArgs e)
+        private void btnOrdenar_Click(object sender, EventArgs e)
         {
-            // Ordenamos y actualizamos en el data grid
-            MostrarEnDataGrid(electController.OrdenarPorPrecio());
+            // Ordenamos y Mostramos en Datagrid
+            MostrarElectrodomesticosEnDataGrid(eleController.OrdenarPorPrecio());
         }
 
-        private void buttonBuscar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            String nombre = textBoxBusqueda.Text;
             // Validación
-            if (nombre == "")
+            if (tbBuscar.Text == "")
             {
-                MessageBox.Show("Ingrese nombre de electrodoméstico");
+                MessageBox.Show("Ingrese nombre a buscar");
                 return;
             }
 
-            // Buscamos y actualizamos en el data grid
-            MostrarEnDataGrid(electController.BuscarPorNombre(nombre));
+            String nombre = tbBuscar.Text;
+            // Buscamos y Mostramos en Datagrid
+            MostrarElectrodomesticosEnDataGrid(eleController.BuscarPorNombre(nombre));
         }
 
-        private void buttonLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            // Limpiamos el cuadro de b�squeda
-            textBoxBusqueda.Text = "";
-            // Actualizamos en el data grid
-            MostrarEnDataGrid(electController.Listar());
+            // Mostramos en Datagrid
+            MostrarElectrodomesticosEnDataGrid(eleController.ListarTodo());
+
+            tbBuscar.Text = "";
+            tbNombre.Text = "";
+            tbCodigo.Text = "";
+            tbPrecio.Text = "";
+            tbStock.Text = "";
         }
     }
 }

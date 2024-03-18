@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lab04.controllers;
+using Lab04.entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,42 +14,44 @@ namespace Lab04
 {
     public partial class Form1 : Form
     {
-        private AlumnoController alumController = new AlumnoController();
+        private AlumnoController alumnoController = new AlumnoController();
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void MostrarEnDataGrid(Alumno[] alumnos)
+        private void MostrarAlumnosEnDataGrid(Alumno[] alumnos)
         {
             dgAlumnos.DataSource = null;
             dgAlumnos.DataSource = alumnos;
         }
 
-        private void buttonRegistrar_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            // Validación
-            if (textBoxCodigo.Text == "" || textBoxNombre.Text == "" || textBoxPromedio.Text == "")
+            // Validaciones
+            if (tbCodigo.Text == "" || tbNombre.Text == "" || tbPromedio.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos");
                 return;
             }
 
             // Crear el objeto
-            Alumno alumno = new Alumno();
-            alumno.Codigo = textBoxCodigo.Text;
-            alumno.Nombre = textBoxNombre.Text;
-            alumno.Promedio = double.Parse(textBoxPromedio.Text);
+            Alumno alumno = new Alumno()
+            {
+                Codigo = tbCodigo.Text,
+                Nombre = tbNombre.Text,
+                Promedio = double.Parse(tbPromedio.Text)
+            };
 
-            // Registrar el objeto
-            alumController.Registrar(alumno);
+            // Registrar
+            alumnoController.Registrar(alumno);
 
-            // Mostrar en DataGrid
-            MostrarEnDataGrid(alumController.ObtenerTodo());
+            // Mostrar
+            MostrarAlumnosEnDataGrid(alumnoController.ListarTodo());
         }
 
-        private void buttonEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             // Validación
             if (dgAlumnos.SelectedRows.Count == 0)
@@ -56,36 +60,35 @@ namespace Lab04
                 return;
             }
 
-            // Obtener código de la fila
+            // Obtener el código de la fila seleccionada
             String codigo = dgAlumnos.SelectedRows[0].Cells[0].Value.ToString();
 
-            // Eliminar el objeto
-            alumController.EliminarPorCodigo(codigo);
+            // Eliminamos
+            alumnoController.Eliminar(codigo);
 
-            // Mostrar en DataGrid
-            MostrarEnDataGrid(alumController.ObtenerTodo());
+            // Mostrar
+            MostrarAlumnosEnDataGrid(alumnoController.ListarTodo());
         }
 
-        private void buttonOrdenar_Click(object sender, EventArgs e)
+        private void btnOrdenar_Click(object sender, EventArgs e)
         {
-            // Mostrar en DataGrid
-            MostrarEnDataGrid(alumController.Ordenar());
+            // Mostrar
+            MostrarAlumnosEnDataGrid(alumnoController.Ordenar());
         }
 
-        private void buttonBuscar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             // Validación
-            if (textBoxBusqueda.Text == "")
+            if (tbBuscar.Text == "")
             {
-                MessageBox.Show("Inserte código a buscar");
+                MessageBox.Show("Ingrese código a buscar");
                 return;
             }
 
-            // Obtener código
-            String codigo = textBoxBusqueda.Text;
+            String codigo = tbBuscar.Text;
 
-            // Mostrar en DataGrid
-            MostrarEnDataGrid(alumController.BuscarPorCodigo(codigo));
+            // Mostrar
+            MostrarAlumnosEnDataGrid(alumnoController.BuscarPorCodigo(codigo));
         }
     }
 }

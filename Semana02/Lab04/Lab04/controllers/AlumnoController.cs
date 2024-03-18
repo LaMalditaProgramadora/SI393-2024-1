@@ -1,15 +1,19 @@
-﻿using System;
+﻿using Lab04.entities;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Lab04
+namespace Lab04.controllers
 {
     internal class AlumnoController
     {
         private Alumno[] alumnos = new Alumno[100];
         private int cont = 0;
 
-        public Alumno[] ObtenerTodo()
+        public Alumno[] ListarTodo()
         {
             return alumnos;
         }
@@ -20,12 +24,12 @@ namespace Lab04
             cont++;
         }
 
-        public void EliminarPorCodigo(String codigo)
+        public void Eliminar(String codigo)
         {
-            int pos = Array.FindIndex(alumnos, alumno => alumno.Codigo == codigo);
+            int pos = Array.FindIndex(alumnos, alumno => alumno.Codigo.Equals(codigo));
 
-            // Lógica de la eliminaci�n
-            for (int i = 0; i < cont; i++)
+            // Lógica de eliminación
+            for(int i = 0; i < cont ; i++)
             {
                 if (i >= pos)
                 {
@@ -37,7 +41,7 @@ namespace Lab04
 
         public Alumno[] BuscarPorCodigo(String codigo)
         {
-            return Array.FindAll(alumnos, alumno => alumno != null && codigo == alumno.Codigo);
+            return Array.FindAll(alumnos, alumno => alumno != null && alumno.Codigo.Contains(codigo));
         }
 
         private class MetodoComparacion : IComparer
@@ -45,7 +49,10 @@ namespace Lab04
             int IComparer.Compare(object x, object y)
             {
                 // Validar nulos
-                if (x == null || y == null) return 1;
+                if (x == null || y == null)
+                {
+                    return 1;
+                }
 
                 double promedio1 = ((Alumno)x).Promedio;
                 double promedio2 = ((Alumno)y).Promedio;

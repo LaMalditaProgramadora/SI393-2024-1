@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Laboratorios\\Lab03\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2718DFC4-7839-4ABD-B3FE-D05B730F798F}|Lab03\\Lab03.csproj|d:\\laboratorios\\lab03\\lab03\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2718DFC4-7839-4ABD-B3FE-D05B730F798F}|Lab03\\Lab03.csproj|solutionrelative:lab03\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2718DFC4-7839-4ABD-B3FE-D05B730F798F}|Lab03\\Lab03.csproj|d:\\laboratorios\\lab03\\lab03\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2718DFC4-7839-4ABD-B3FE-D05B730F798F}|Lab03\\Lab03.csproj|solutionrelative:lab03\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2718DFC4-7839-4ABD-B3FE-D05B730F798F}|Lab03\\Lab03.csproj|d:\\laboratorios\\lab03\\lab03\\controllers\\atencioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2718DFC4-7839-4ABD-B3FE-D05B730F798F}|Lab03\\Lab03.csproj|solutionrelative:lab03\\controllers\\atencioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AtencionController.cs",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab03\\Lab03\\controllers\\AtencionController.cs",
+              "RelativeDocumentMoniker": "Lab03\\controllers\\AtencionController.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab03\\Lab03\\controllers\\AtencionController.cs",
+              "RelativeToolTip": "Lab03\\controllers\\AtencionController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAACQAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T16:35:49.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab03\\Lab03\\Form1.cs",
+              "RelativeDocumentMoniker": "Lab03\\Form1.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab03\\Lab03\\Form1.cs",
+              "RelativeToolTip": "Lab03\\Form1.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAswBoAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T16:34:26.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab03\\Lab03\\Form1.cs",
+              "RelativeDocumentMoniker": "Lab03\\Form1.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab03\\Lab03\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Lab03\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T16:34:23.724Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
