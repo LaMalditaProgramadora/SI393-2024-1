@@ -6,7 +6,7 @@ namespace Lab06
     {
         private static List<Album> albumes = new List<Album>();
 
-        public static List<Album> Listar()
+        public List<Album> Listar()
         {
             return albumes;
         }

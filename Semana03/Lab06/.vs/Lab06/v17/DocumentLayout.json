@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SI393-2024-1\\Semana03\\Lab06\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{98B40D20-87BE-42BF-B003-8A0EA3589032}|Lab06\\Lab06.csproj|d:\\si393-2024-1\\semana03\\lab06\\lab06\\heroecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98B40D20-87BE-42BF-B003-8A0EA3589032}|Lab06\\Lab06.csproj|solutionrelative:lab06\\heroecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98B40D20-87BE-42BF-B003-8A0EA3589032}|Lab06\\Lab06.csproj|d:\\si393-2024-1\\semana03\\lab06\\lab06\\albumcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98B40D20-87BE-42BF-B003-8A0EA3589032}|Lab06\\Lab06.csproj|solutionrelative:lab06\\albumcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HeroeController.cs",
+              "DocumentMoniker": "D:\\SI393-2024-1\\Semana03\\Lab06\\Lab06\\HeroeController.cs",
+              "RelativeDocumentMoniker": "Lab06\\HeroeController.cs",
+              "ToolTip": "D:\\SI393-2024-1\\Semana03\\Lab06\\Lab06\\HeroeController.cs",
+              "RelativeToolTip": "Lab06\\HeroeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T01:53:18.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AlbumController.cs",
+              "DocumentMoniker": "D:\\SI393-2024-1\\Semana03\\Lab06\\Lab06\\AlbumController.cs",
+              "RelativeDocumentMoniker": "Lab06\\AlbumController.cs",
+              "ToolTip": "D:\\SI393-2024-1\\Semana03\\Lab06\\Lab06\\AlbumController.cs",
+              "RelativeToolTip": "Lab06\\AlbumController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T01:52:59.48Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
