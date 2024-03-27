@@ -46,20 +46,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controllers\AgenciaController.cs" />
-    <Compile Include="controllers\InmuebleController.cs" />
     <Compile Include="entities\Agencia.cs" />
     <Compile Include="entities\Inmueble.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormAgencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormAgencia.Designer.cs">
+      <DependentUpon>FormAgencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInmueble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInmueble.Designer.cs">
+      <DependentUpon>FormInmueble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporte.Designer.cs">
+      <DependentUpon>FormReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="repositories\AgenciaRepository.cs" />
+    <Compile Include="repositories\InmuebleRepository.cs" />
+    <Compile Include="services\AgenciaService.cs" />
+    <Compile Include="services\InmuebleService.cs" />
+    <EmbeddedResource Include="FormAgencia.resx">
+      <DependentUpon>FormAgencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInmueble.resx">
+      <DependentUpon>FormInmueble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReporte.resx">
+      <DependentUpon>FormReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,5 +112,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

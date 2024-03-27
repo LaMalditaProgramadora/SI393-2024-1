@@ -1,5 +1,5 @@
-﻿using Lab07.controllers;
-using Lab07.entities;
+﻿using Lab07.entities;
+using Lab07.services;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -8,7 +8,7 @@ namespace Lab07
 {
     public partial class Form1 : Form
     {
-        private AlumnoController alumnoController = new AlumnoController();
+        private AlumnoService alumnoService = new AlumnoService();
 
         public Form1()
         {
@@ -42,7 +42,7 @@ namespace Lab07
             };
 
             // Agrega a la lista
-            bool registrado = alumnoController.Registrar(alumno);
+            bool registrado = alumnoService.Registrar(alumno);
             if (!registrado)
             {
                 MessageBox.Show("Ingrese otro código");
@@ -50,7 +50,7 @@ namespace Lab07
             }
 
             // Mostrar en ListView
-            MostrarAlumnosEnDataGrid(AlumnoController.Listar());
+            MostrarAlumnosEnDataGrid(alumnoService.ListarTodo());
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -66,11 +66,11 @@ namespace Lab07
             foreach (DataGridViewRow fila in dgAlumnos.SelectedRows)
             {
                 String codigo = fila.Cells[0].Value.ToString();
-                alumnoController.Eliminar(codigo);
+                alumnoService.Eliminar(codigo);
             }
 
             // Mostrar en ListView
-            MostrarAlumnosEnDataGrid(AlumnoController.Listar());
+            MostrarAlumnosEnDataGrid(alumnoService.ListarTodo());
         }
     }
 }

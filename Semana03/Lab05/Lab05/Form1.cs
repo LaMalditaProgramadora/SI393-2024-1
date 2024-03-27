@@ -1,5 +1,5 @@
-﻿using Lab05.controllers;
-using Lab05.entities;
+﻿using Lab05.entities;
+using Lab05.services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,7 @@ namespace Lab05
     public partial class Form1 : Form
     {
 
-        private ElectrodomesticoController eleController = new ElectrodomesticoController();
+        private ElectrodomesticoService electrodomesticoService = new ElectrodomesticoService();
 
         public Form1()
         {
@@ -72,7 +72,7 @@ namespace Lab05
             };
 
             // Registramos
-            bool registrado = eleController.Registrar(electrodomestico);
+            bool registrado = electrodomesticoService.Registrar(electrodomestico);
 
             if (!registrado)
             {
@@ -81,7 +81,7 @@ namespace Lab05
             }
 
             // Mostramos en Datagrid
-            MostrarElectrodomesticosEnDataGrid(eleController.ListarTodo());
+            MostrarElectrodomesticosEnDataGrid(electrodomesticoService.ListarTodo());
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -96,25 +96,25 @@ namespace Lab05
             String codigo = dgElectrodomesticos.SelectedRows[0].Cells[0].Value.ToString();
 
             // Eliminamos
-            eleController.Eliminar(codigo);
+            electrodomesticoService.Eliminar(codigo);
 
             // Mostramos en Datagrid
-            MostrarElectrodomesticosEnDataGrid(eleController.ListarTodo());
+            MostrarElectrodomesticosEnDataGrid(electrodomesticoService.ListarTodo());
         }
 
         private void btnEliminarTodo_Click(object sender, EventArgs e)
         {
             // Eliminamos
-            eleController.EliminarTodo();
+            electrodomesticoService.EliminarTodo();
 
             // Mostramos en Datagrid
-            MostrarElectrodomesticosEnDataGrid(eleController.ListarTodo());
+            MostrarElectrodomesticosEnDataGrid(electrodomesticoService.ListarTodo());
         }
 
         private void btnOrdenar_Click(object sender, EventArgs e)
         {
             // Ordenamos y Mostramos en Datagrid
-            MostrarElectrodomesticosEnDataGrid(eleController.OrdenarPorPrecio());
+            MostrarElectrodomesticosEnDataGrid(electrodomesticoService.OrdenarPorPrecio());
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -128,13 +128,13 @@ namespace Lab05
 
             String nombre = tbBuscar.Text;
             // Buscamos y Mostramos en Datagrid
-            MostrarElectrodomesticosEnDataGrid(eleController.BuscarPorNombre(nombre));
+            MostrarElectrodomesticosEnDataGrid(electrodomesticoService.BuscarPorNombre(nombre));
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             // Mostramos en Datagrid
-            MostrarElectrodomesticosEnDataGrid(eleController.ListarTodo());
+            MostrarElectrodomesticosEnDataGrid(electrodomesticoService.ListarTodo());
 
             tbBuscar.Text = "";
             tbNombre.Text = "";

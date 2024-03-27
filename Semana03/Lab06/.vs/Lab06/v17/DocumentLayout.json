@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\SI393-2024-1\\Semana03\\Lab06\\",
+  "WorkspaceRootPath": "D:\\Laboratorios\\Lab06\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{98B40D20-87BE-42BF-B003-8A0EA3589032}|Lab06\\Lab06.csproj|d:\\si393-2024-1\\semana03\\lab06\\lab06\\heroecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98B40D20-87BE-42BF-B003-8A0EA3589032}|Lab06\\Lab06.csproj|solutionrelative:lab06\\heroecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A53FF0E-35CF-488A-B0D4-9EECBAFB57B5}|Lab06\\Lab06.csproj|d:\\laboratorios\\lab06\\lab06\\repositories\\heroerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A53FF0E-35CF-488A-B0D4-9EECBAFB57B5}|Lab06\\Lab06.csproj|solutionrelative:lab06\\repositories\\heroerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98B40D20-87BE-42BF-B003-8A0EA3589032}|Lab06\\Lab06.csproj|d:\\si393-2024-1\\semana03\\lab06\\lab06\\albumcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98B40D20-87BE-42BF-B003-8A0EA3589032}|Lab06\\Lab06.csproj|solutionrelative:lab06\\albumcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A53FF0E-35CF-488A-B0D4-9EECBAFB57B5}|Lab06\\Lab06.csproj|d:\\laboratorios\\lab06\\lab06\\formreporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A53FF0E-35CF-488A-B0D4-9EECBAFB57B5}|Lab06\\Lab06.csproj|solutionrelative:lab06\\formreporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A53FF0E-35CF-488A-B0D4-9EECBAFB57B5}|Lab06\\Lab06.csproj|d:\\laboratorios\\lab06\\lab06\\formreporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6A53FF0E-35CF-488A-B0D4-9EECBAFB57B5}|Lab06\\Lab06.csproj|solutionrelative:lab06\\formreporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,28 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HeroeController.cs",
-              "DocumentMoniker": "D:\\SI393-2024-1\\Semana03\\Lab06\\Lab06\\HeroeController.cs",
-              "RelativeDocumentMoniker": "Lab06\\HeroeController.cs",
-              "ToolTip": "D:\\SI393-2024-1\\Semana03\\Lab06\\Lab06\\HeroeController.cs",
-              "RelativeToolTip": "Lab06\\HeroeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAjAAAA",
+              "Title": "HeroeRepository.cs",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab06\\Lab06\\repositories\\HeroeRepository.cs",
+              "RelativeDocumentMoniker": "Lab06\\repositories\\HeroeRepository.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab06\\Lab06\\repositories\\HeroeRepository.cs",
+              "RelativeToolTip": "Lab06\\repositories\\HeroeRepository.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAUwCcAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T01:53:18.298Z",
+              "WhenOpened": "2024-03-18T03:10:00.425Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AlbumController.cs",
-              "DocumentMoniker": "D:\\SI393-2024-1\\Semana03\\Lab06\\Lab06\\AlbumController.cs",
-              "RelativeDocumentMoniker": "Lab06\\AlbumController.cs",
-              "ToolTip": "D:\\SI393-2024-1\\Semana03\\Lab06\\Lab06\\AlbumController.cs",
-              "RelativeToolTip": "Lab06\\AlbumController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAOAAAA",
+              "Title": "FormReporte.cs",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab06\\Lab06\\FormReporte.cs",
+              "RelativeDocumentMoniker": "Lab06\\FormReporte.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab06\\Lab06\\FormReporte.cs",
+              "RelativeToolTip": "Lab06\\FormReporte.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF4AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T01:52:59.48Z",
+              "WhenOpened": "2024-03-18T03:03:39.36Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormReporte.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Laboratorios\\Lab06\\Lab06\\FormReporte.cs",
+              "RelativeDocumentMoniker": "Lab06\\FormReporte.cs",
+              "ToolTip": "D:\\Laboratorios\\Lab06\\Lab06\\FormReporte.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Lab06\\FormReporte.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T02:59:00.713Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
