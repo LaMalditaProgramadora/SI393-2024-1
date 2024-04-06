@@ -38,14 +38,13 @@ namespace Lab08.repositories
                 // Y luego los cuento
                 int inmueblesVentaEnAgencia = inmuebles.Count;
 
-                double maxSuperficieAlquilerEnAgencia = inmuebles.Max(i => i.Superficie);
-                if (maxSuperficieAlquilerEnAgencia > maxInmueblesVentaGeneral)
+                if (inmueblesVentaEnAgencia > maxInmueblesVentaGeneral)
                 {
                     maxInmueblesVentaGeneral = inmueblesVentaEnAgencia;
                     agenciasTemp.Clear();
                     agenciasTemp.Add(agencia);
                 }
-                else if (maxSuperficieAlquilerEnAgencia == maxInmueblesVentaGeneral)
+                else if (inmueblesVentaEnAgencia == maxInmueblesVentaGeneral)
                 {
                     agenciasTemp.Add(agencia);
                 }
