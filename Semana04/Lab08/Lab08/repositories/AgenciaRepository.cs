@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab08.repositories
 {
@@ -28,23 +26,39 @@ namespace Lab08.repositories
 
         public List<Agencia> ListarMayorCantidadInmueblesVenta()
         {
+            List<Agencia> agenciasTemp = new List<Agencia>();
             int maxInmueblesVentaGeneral = 0;
+
             foreach (Agencia agencia in agencias)
             {
+                // int inmueblesVentaEnAgencia = agencia.Inmuebles.Where(i => i.Condicion.Equals("Venta")).ToList().Count();
+                // He separado este código en dos variables para que se pueda ver mejor
+                // Primero encuentro los inmuebles
                 List<Inmueble> inmuebles = agencia.Inmuebles.Where(i => i.Condicion.Equals("Venta")).ToList();
-                int inmueblesVentaEnAgencia = inmuebles.ToList().Count;
-                if (inmueblesVentaEnAgencia > maxInmueblesVentaGeneral)
+                // Y luego los cuento
+                int inmueblesVentaEnAgencia = inmuebles.Count;
+
+                double maxSuperficieAlquilerEnAgencia = inmuebles.Max(i => i.Superficie);
+                if (maxSuperficieAlquilerEnAgencia > maxInmueblesVentaGeneral)
                 {
                     maxInmueblesVentaGeneral = inmueblesVentaEnAgencia;
+                    agenciasTemp.Clear();
+                    agenciasTemp.Add(agencia);
+                }
+                else if (maxSuperficieAlquilerEnAgencia == maxInmueblesVentaGeneral)
+                {
+                    agenciasTemp.Add(agencia);
                 }
             }
 
-            return agencias.Where(a => a.Inmuebles.Count == maxInmueblesVentaGeneral).ToList();
+            return agenciasTemp;
         }
 
         public List<Agencia> ListarMayorSuperficieInmueblesAlquiler()
         {
+            List<Agencia> agenciasTemp = new List<Agencia>();
             double maxSuperficieAlquilerGeneral = 0;
+
             foreach (Agencia agencia in agencias)
             {
                 List<Inmueble> inmuebles = agencia.Inmuebles.Where(i => i.Condicion.Equals("Alquiler")).ToList();
@@ -54,10 +68,16 @@ namespace Lab08.repositories
                     if (maxSuperficieAlquilerEnAgencia > maxSuperficieAlquilerGeneral)
                     {
                         maxSuperficieAlquilerGeneral = maxSuperficieAlquilerEnAgencia;
+                        agenciasTemp.Clear();
+                        agenciasTemp.Add(agencia);
+                    }
+                    else if (maxSuperficieAlquilerEnAgencia == maxSuperficieAlquilerGeneral)
+                    {
+                        agenciasTemp.Add(agencia);
                     }
                 }
             }
-            return agencias.Where(a => a.Inmuebles.Exists(i => i.Superficie == maxSuperficieAlquilerGeneral)).ToList();
+            return agenciasTemp;
         }
     }
 }
