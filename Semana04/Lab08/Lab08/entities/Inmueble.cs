@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab08.entities
 {
-    internal class Inmueble
+    class Inmueble
     {
         public Inmueble() { }
         public String Codigo { get; set; }
@@ -15,5 +15,4 @@ namespace Lab08.entities
         public double Precio { get; set; }
         public String Condicion { get; set; }
     }
-
 }

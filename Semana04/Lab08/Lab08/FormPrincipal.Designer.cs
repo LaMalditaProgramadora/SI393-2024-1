@@ -35,9 +35,9 @@ namespace Lab08
             // 
             // btnVerAgencias
             // 
-            this.btnVerAgencias.Location = new System.Drawing.Point(55, 34);
+            this.btnVerAgencias.Location = new System.Drawing.Point(83, 32);
             this.btnVerAgencias.Name = "btnVerAgencias";
-            this.btnVerAgencias.Size = new System.Drawing.Size(91, 23);
+            this.btnVerAgencias.Size = new System.Drawing.Size(107, 23);
             this.btnVerAgencias.TabIndex = 0;
             this.btnVerAgencias.Text = "Ver Agencias";
             this.btnVerAgencias.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@ namespace Lab08
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(55, 74);
+            this.btnSalir.Location = new System.Drawing.Point(83, 96);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(91, 23);
+            this.btnSalir.Size = new System.Drawing.Size(107, 23);
             this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@ namespace Lab08
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(210, 125);
+            this.ClientSize = new System.Drawing.Size(285, 161);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnVerAgencias);
             this.Name = "FormPrincipal";

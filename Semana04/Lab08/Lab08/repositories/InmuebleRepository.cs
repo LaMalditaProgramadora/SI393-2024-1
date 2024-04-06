@@ -5,63 +5,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab08.repositores
+namespace Lab08.repositories
 {
     class InmuebleRepository
     {
-        public bool Existe(String codigoAgencia, String codigoInmueble)
+        public bool Existe(String codigoInmueble)
         {
-            // Traemos los todos las agencias
             List<Agencia> agencias = AgenciaRepository.ListarTodo();
-            // Buscamos la agencia con el código correcto
-            Agencia agenciaSeleccionada = agencias.Find(a => a.Codigo.Equals(codigoAgencia));
-
-            return agenciaSeleccionada.Inmuebles.Exists(i => i.Codigo.Equals(codigoInmueble));
+            return agencias.Exists(a => a.Inmuebles.Exists(i => i.Codigo.Equals(codigoInmueble)));
         }
 
         public void Registrar(String codigoAgencia, Inmueble inmueble)
         {
-            // Traemos los todos las agencias
             List<Agencia> agencias = AgenciaRepository.ListarTodo();
-            // Buscamos la agencia con el código correcto
-            Agencia agenciaSeleccionada = agencias.Find(elemento => elemento.Codigo.Equals(codigoAgencia));
+            Agencia agencia = agencias.Find(a => a.Codigo.Equals(codigoAgencia));
 
-            // Hallamos la lista de inmuebles de la agencia
-            List<Inmueble> inmuebles = agenciaSeleccionada.Inmuebles;
-
-            inmuebles.Add(inmueble);
+            agencia.Inmuebles.Add(inmueble);
         }
 
-        public List<Inmueble> ListarTodoPorAgencia(String codigoAgencia)
+        public List<Inmueble> ListarTodo(String codigoAgencia)
         {
-            // Traemos los todas las agencias
             List<Agencia> agencias = AgenciaRepository.ListarTodo();
-            // Buscamos la agencia con el código correcto
-            Agencia agenciaSeleccionada = agencias.Find(elemento => elemento.Codigo.Equals(codigoAgencia));
-
-            // Hallamos la lista de inmuebles de la agencia
-            return agenciaSeleccionada.Inmuebles;
+            Agencia agencia = agencias.Find(a => a.Codigo.Equals(codigoAgencia));
+            return agencia.Inmuebles;
         }
+
         public List<Inmueble> ListarPorAgenciaVenta(String codigoAgencia)
         {
-            // Traemos los todas las agencias
             List<Agencia> agencias = AgenciaRepository.ListarTodo();
-            // Buscamos la agencia con el código correcto
-            Agencia agenciaSeleccionada = agencias.Find(elemento => elemento.Codigo.Equals(codigoAgencia));
-
-            // Hallamos la lista de inmuebles en venta de la agencia
-            return agenciaSeleccionada.Inmuebles.FindAll(i => i.Condicion.Equals("Venta"));
+            Agencia agencia = agencias.Find(a => a.Codigo.Equals(codigoAgencia));
+            return agencia.Inmuebles.Where(i => i.Condicion.Equals("Venta")).ToList();
         }
 
-        public List<Inmueble> ListarPorAgenciaAlquiler(String codigoAgencia)
+        public double MontoTotalAlquilerInmuebles()
         {
-            // Traemos los todas las agencias
             List<Agencia> agencias = AgenciaRepository.ListarTodo();
-            // Buscamos la agencia con el código correcto
-            Agencia agenciaSeleccionada = agencias.Find(elemento => elemento.Codigo.Equals(codigoAgencia));
-
-            // Hallamos la lista de inmuebles en venta de la agencia
-            return agenciaSeleccionada.Inmuebles.FindAll(i => i.Condicion.Equals("Alquiler"));
+            double monto = 0;
+            foreach (Agencia agencia in agencias)
+            {
+                foreach (Inmueble inmueble in agencia.Inmuebles)
+                {
+                    if (inmueble.Condicion.Equals("Alquiler"))
+                    {
+                        monto += inmueble.Precio;
+                    }
+                }
+            }
+            return monto;
         }
     }
 }

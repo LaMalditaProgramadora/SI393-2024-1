@@ -2,20 +2,27 @@
 using Lab08.services;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lab08
 {
     public partial class FormInmueble : Form
     {
-        private InmuebleService inmuebleService = new InmuebleService();
         private String codigoAgencia;
+        private InmuebleService inmuebleService = new InmuebleService();
 
         public FormInmueble(String codigoAgencia)
         {
             InitializeComponent();
             this.codigoAgencia = codigoAgencia;
-            MostrarInmuebles(inmuebleService.ListarTodoPorAgencia(codigoAgencia));
+            // Mostrar
+            MostrarInmuebles(inmuebleService.ListarTodo(codigoAgencia));
         }
 
         private void MostrarInmuebles(List<Inmueble> inmuebles)
@@ -25,28 +32,29 @@ namespace Lab08
             {
                 return;
             }
-            dgInmuebles.DataSource = inmuebles;
+            else
+            {
+                dgInmuebles.DataSource = inmuebles;
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             // Validación de campos
-            if (tbInmuebleCodigo.Text == "" || tbInmuebleDireccion.Text == "" ||
-                tbInmuebleSuperficie.Text == "" || tbInmueblePrecio.Text == "" ||
-                cbInmuebleCondicion.Text == "")
+            if (tbCodigo.Text == "" || tbDireccion.Text == "" || tbSuperficie.Text == "" || tbPrecio.Text == "" || cbCondicion.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos");
                 return;
             }
 
-            // Crear el objeto
+            // Creación del objeto
             Inmueble inmueble = new Inmueble()
             {
-                Codigo = tbInmuebleCodigo.Text,
-                Direccion = tbInmuebleDireccion.Text,
-                Superficie = double.Parse(tbInmuebleSuperficie.Text),
-                Precio = double.Parse(tbInmueblePrecio.Text),
-                Condicion = cbInmuebleCondicion.Text
+                Codigo = tbCodigo.Text,
+                Direccion = tbDireccion.Text,
+                Superficie = double.Parse(tbSuperficie.Text),
+                Precio = double.Parse(tbPrecio.Text),
+                Condicion = cbCondicion.Text
             };
 
             // Registrar
@@ -57,8 +65,8 @@ namespace Lab08
                 return;
             }
 
-            // Mostrar en DataGrid
-            MostrarInmuebles(inmuebleService.ListarTodoPorAgencia(codigoAgencia));
+            // Mostrar
+            MostrarInmuebles(inmuebleService.ListarTodo(codigoAgencia));
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

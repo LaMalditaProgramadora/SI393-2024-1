@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Lab07
 {
-    partial class Form1
+    partial class FormAlumno
     {
         /// <summary>
         ///  Required designer variable.
@@ -137,7 +137,7 @@ namespace Lab07
             this.dgAlumnos.Size = new System.Drawing.Size(447, 179);
             this.dgAlumnos.TabIndex = 11;
             // 
-            // Form1
+            // FormAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -153,7 +153,7 @@ namespace Lab07
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.textBoxCodigo);
-            this.Name = "Form1";
+            this.Name = "FormAlumno";
             this.Text = "Alumnos";
             ((System.ComponentModel.ISupportInitialize)(this.dgAlumnos)).EndInit();
             this.ResumeLayout(false);

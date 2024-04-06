@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab08.entities
 {
-    internal class Agencia
+    class Agencia
     {
         public Agencia() { }
         public String Codigo { get; set; }

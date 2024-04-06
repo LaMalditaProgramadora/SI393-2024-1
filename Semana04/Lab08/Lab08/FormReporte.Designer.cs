@@ -29,8 +29,6 @@ namespace Lab08
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgInmuebles = new System.Windows.Forms.DataGridView();
-            this.dgAgencias = new System.Windows.Forms.DataGridView();
             this.lblMontoTotalAlquilerInmuebles = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.btnAgenciasMayorCantidadInmueblesVenta = new System.Windows.Forms.Button();
@@ -38,47 +36,29 @@ namespace Lab08
             this.btnBuscarVenta = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.tbBuscar = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnBuscarAlquiler = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgInmuebles)).BeginInit();
+            this.dgAgencias = new System.Windows.Forms.DataGridView();
+            this.dgInmuebles = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgAgencias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInmuebles)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgInmuebles
-            // 
-            this.dgInmuebles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgInmuebles.Location = new System.Drawing.Point(282, 200);
-            this.dgInmuebles.Name = "dgInmuebles";
-            this.dgInmuebles.Size = new System.Drawing.Size(418, 160);
-            this.dgInmuebles.TabIndex = 52;
-            // 
-            // dgAgencias
-            // 
-            this.dgAgencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAgencias.Location = new System.Drawing.Point(282, 12);
-            this.dgAgencias.Name = "dgAgencias";
-            this.dgAgencias.Size = new System.Drawing.Size(418, 167);
-            this.dgAgencias.TabIndex = 51;
             // 
             // lblMontoTotalAlquilerInmuebles
             // 
             this.lblMontoTotalAlquilerInmuebles.AutoSize = true;
-            this.lblMontoTotalAlquilerInmuebles.Location = new System.Drawing.Point(131, 327);
+            this.lblMontoTotalAlquilerInmuebles.Location = new System.Drawing.Point(131, 316);
             this.lblMontoTotalAlquilerInmuebles.Name = "lblMontoTotalAlquilerInmuebles";
             this.lblMontoTotalAlquilerInmuebles.Size = new System.Drawing.Size(13, 13);
-            this.lblMontoTotalAlquilerInmuebles.TabIndex = 50;
+            this.lblMontoTotalAlquilerInmuebles.TabIndex = 62;
             this.lblMontoTotalAlquilerInmuebles.Text = "0";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 327);
+            this.label12.Location = new System.Drawing.Point(26, 316);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(99, 13);
-            this.label12.TabIndex = 49;
+            this.label12.TabIndex = 61;
             this.label12.Text = "Monto total alquiler:";
             // 
             // btnAgenciasMayorCantidadInmueblesVenta
@@ -86,8 +66,8 @@ namespace Lab08
             this.btnAgenciasMayorCantidadInmueblesVenta.Location = new System.Drawing.Point(29, 65);
             this.btnAgenciasMayorCantidadInmueblesVenta.Name = "btnAgenciasMayorCantidadInmueblesVenta";
             this.btnAgenciasMayorCantidadInmueblesVenta.Size = new System.Drawing.Size(216, 37);
-            this.btnAgenciasMayorCantidadInmueblesVenta.TabIndex = 48;
-            this.btnAgenciasMayorCantidadInmueblesVenta.Text = "Buscar las tienen más inmuebles en venta";
+            this.btnAgenciasMayorCantidadInmueblesVenta.TabIndex = 60;
+            this.btnAgenciasMayorCantidadInmueblesVenta.Text = "Buscar las agencias tienen más inmuebles en venta";
             this.btnAgenciasMayorCantidadInmueblesVenta.UseVisualStyleBackColor = true;
             this.btnAgenciasMayorCantidadInmueblesVenta.Click += new System.EventHandler(this.btnAgenciasMayorCantidadInmueblesVenta_Click);
             // 
@@ -96,17 +76,17 @@ namespace Lab08
             this.btnAgenciasAlquilerInmueblesMayorSuperficie.Location = new System.Drawing.Point(29, 23);
             this.btnAgenciasAlquilerInmueblesMayorSuperficie.Name = "btnAgenciasAlquilerInmueblesMayorSuperficie";
             this.btnAgenciasAlquilerInmueblesMayorSuperficie.Size = new System.Drawing.Size(216, 37);
-            this.btnAgenciasAlquilerInmueblesMayorSuperficie.TabIndex = 47;
-            this.btnAgenciasAlquilerInmueblesMayorSuperficie.Text = "Buscar las que alquilan inmuebles con mayor superficie";
+            this.btnAgenciasAlquilerInmueblesMayorSuperficie.TabIndex = 59;
+            this.btnAgenciasAlquilerInmueblesMayorSuperficie.Text = "Buscar las agencias que alquilan inmuebles con mayor superficie";
             this.btnAgenciasAlquilerInmueblesMayorSuperficie.UseVisualStyleBackColor = true;
             this.btnAgenciasAlquilerInmueblesMayorSuperficie.Click += new System.EventHandler(this.btnAgenciasAlquilerInmueblesMayorSuperficie_Click);
             // 
             // btnBuscarVenta
             // 
-            this.btnBuscarVenta.Location = new System.Drawing.Point(29, 261);
+            this.btnBuscarVenta.Location = new System.Drawing.Point(29, 250);
             this.btnBuscarVenta.Name = "btnBuscarVenta";
             this.btnBuscarVenta.Size = new System.Drawing.Size(216, 20);
-            this.btnBuscarVenta.TabIndex = 46;
+            this.btnBuscarVenta.TabIndex = 58;
             this.btnBuscarVenta.Text = "Buscar Inmuebles en Venta";
             this.btnBuscarVenta.UseVisualStyleBackColor = true;
             this.btnBuscarVenta.Click += new System.EventHandler(this.btnBuscarVenta_Click);
@@ -114,53 +94,51 @@ namespace Lab08
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(26, 213);
+            this.label13.Location = new System.Drawing.Point(26, 202);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(102, 13);
-            this.label13.TabIndex = 45;
+            this.label13.TabIndex = 57;
             this.label13.Text = "Buscar por agencia:";
             // 
             // tbBuscar
             // 
-            this.tbBuscar.Location = new System.Drawing.Point(29, 235);
+            this.tbBuscar.Location = new System.Drawing.Point(29, 224);
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(216, 20);
-            this.tbBuscar.TabIndex = 44;
+            this.tbBuscar.TabIndex = 56;
             // 
-            // pictureBox4
+            // dgAgencias
             // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 200);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(251, 160);
-            this.pictureBox4.TabIndex = 43;
-            this.pictureBox4.TabStop = false;
+            this.dgAgencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAgencias.Location = new System.Drawing.Point(294, 23);
+            this.dgAgencias.Name = "dgAgencias";
+            this.dgAgencias.Size = new System.Drawing.Size(484, 148);
+            this.dgAgencias.TabIndex = 70;
             // 
-            // pictureBox3
+            // dgInmuebles
             // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(251, 107);
-            this.pictureBox3.TabIndex = 42;
-            this.pictureBox3.TabStop = false;
+            this.dgInmuebles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgInmuebles.Location = new System.Drawing.Point(294, 190);
+            this.dgInmuebles.Name = "dgInmuebles";
+            this.dgInmuebles.Size = new System.Drawing.Size(484, 163);
+            this.dgInmuebles.TabIndex = 72;
             // 
-            // btnBuscarAlquiler
+            // btnSalir
             // 
-            this.btnBuscarAlquiler.Location = new System.Drawing.Point(29, 287);
-            this.btnBuscarAlquiler.Name = "btnBuscarAlquiler";
-            this.btnBuscarAlquiler.Size = new System.Drawing.Size(216, 20);
-            this.btnBuscarAlquiler.TabIndex = 53;
-            this.btnBuscarAlquiler.Text = "Buscar Inmuebles en Alquiler";
-            this.btnBuscarAlquiler.UseVisualStyleBackColor = true;
-            this.btnBuscarAlquiler.Click += new System.EventHandler(this.btnBuscarAlquiler_Click);
+            this.btnSalir.Location = new System.Drawing.Point(29, 342);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 73;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FormReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 384);
-            this.Controls.Add(this.btnBuscarAlquiler);
+            this.ClientSize = new System.Drawing.Size(800, 381);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgInmuebles);
             this.Controls.Add(this.dgAgencias);
             this.Controls.Add(this.lblMontoTotalAlquilerInmuebles);
@@ -170,23 +148,16 @@ namespace Lab08
             this.Controls.Add(this.btnBuscarVenta);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.tbBuscar);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
             this.Name = "FormReporte";
             this.Text = "Reportes";
-            ((System.ComponentModel.ISupportInitialize)(this.dgInmuebles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAgencias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInmuebles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgInmuebles;
-        private System.Windows.Forms.DataGridView dgAgencias;
         private System.Windows.Forms.Label lblMontoTotalAlquilerInmuebles;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnAgenciasMayorCantidadInmueblesVenta;
@@ -194,8 +165,8 @@ namespace Lab08
         private System.Windows.Forms.Button btnBuscarVenta;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tbBuscar;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button btnBuscarAlquiler;
+        private System.Windows.Forms.DataGridView dgAgencias;
+        private System.Windows.Forms.DataGridView dgInmuebles;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

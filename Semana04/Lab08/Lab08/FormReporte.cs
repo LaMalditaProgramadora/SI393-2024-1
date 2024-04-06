@@ -20,8 +20,10 @@ namespace Lab08
         public FormReporte()
         {
             InitializeComponent();
-        }
 
+            // Calcular monto total alquiler
+            lblMontoTotalAlquilerInmuebles.Text = inmuebleService.MontoTotalAlquilerInmuebles().ToString();
+        }
 
         private void MostrarAgencias(List<Agencia> agencias)
         {
@@ -30,7 +32,10 @@ namespace Lab08
             {
                 return;
             }
-            dgAgencias.DataSource = agencias;
+            else
+            {
+                dgAgencias.DataSource = agencias;
+            }
         }
 
         private void MostrarInmuebles(List<Inmueble> inmuebles)
@@ -38,10 +43,12 @@ namespace Lab08
             dgInmuebles.DataSource = null;
             if (inmuebles.Count == 0)
             {
-                lblMontoTotalAlquilerInmuebles.Text = "0";
                 return;
             }
-            dgInmuebles.DataSource = inmuebles;
+            else
+            {
+                dgInmuebles.DataSource = inmuebles;
+            }
         }
 
         private void btnAgenciasAlquilerInmueblesMayorSuperficie_Click(object sender, EventArgs e)
@@ -56,32 +63,23 @@ namespace Lab08
 
         private void btnBuscarVenta_Click(object sender, EventArgs e)
         {
-            // Validación de campos
+            // Validación
             if (tbBuscar.Text == "")
             {
                 MessageBox.Show("Ingrese código de agencia");
                 return;
             }
+
             String codigoAgencia = tbBuscar.Text;
 
             MostrarInmuebles(inmuebleService.ListarPorAgenciaVenta(codigoAgencia));
         }
 
-        private void btnBuscarAlquiler_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
-            // Validación de campos
-            if (tbBuscar.Text == "")
-            {
-                MessageBox.Show("Ingrese código de agencia");
-                return;
-            }
-            String codigoAgencia = tbBuscar.Text;
-
-            MostrarInmuebles(inmuebleService.ListarPorAgenciaAlquiler(codigoAgencia));
-
-
-            // Hallar el monto de los inmuebles alquilados
-            lblMontoTotalAlquilerInmuebles.Text = inmuebleService.ListarPorAgenciaAlquiler(codigoAgencia).Sum(i => i.Precio).ToString();
+            this.Close();
         }
     }
+
+
 }

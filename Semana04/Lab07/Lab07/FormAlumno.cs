@@ -6,20 +6,27 @@ using System.Windows.Forms;
 
 namespace Lab07
 {
-    public partial class Form1 : Form
+    public partial class FormAlumno : Form
     {
         private AlumnoService alumnoService = new AlumnoService();
 
-        public Form1()
+        public FormAlumno()
         {
             InitializeComponent();
         }
 
         private void MostrarAlumnosEnDataGrid(List<Alumno> alumnos)
         {
-            if (alumnos.Count == 0) return;
             dgAlumnos.DataSource = null;
-            dgAlumnos.DataSource = alumnos;
+
+            if (alumnos.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                dgAlumnos.DataSource = alumnos;
+            }
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
@@ -72,5 +79,6 @@ namespace Lab07
             // Mostrar en ListView
             MostrarAlumnosEnDataGrid(alumnoService.ListarTodo());
         }
+
     }
 }

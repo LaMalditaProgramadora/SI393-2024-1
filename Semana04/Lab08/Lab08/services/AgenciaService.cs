@@ -1,5 +1,5 @@
 ﻿using Lab08.entities;
-using Lab08.repositores;
+using Lab08.repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +30,6 @@ namespace Lab08.services
             return AgenciaRepository.ListarTodo();
         }
 
-
         public List<Agencia> ListarMayorCantidadInmueblesVenta()
         {
             return agenciaRepository.ListarMayorCantidadInmueblesVenta();
@@ -39,11 +38,6 @@ namespace Lab08.services
         public List<Agencia> ListarMayorSuperficieInmueblesAlquiler()
         {
             return agenciaRepository.ListarMayorSuperficieInmueblesAlquiler();
-        }
-
-        public List<Agencia> BuscarPorCodigo(String codigo)
-        {
-            return agenciaRepository.BuscarPorCodigo(codigo);
         }
     }
 }

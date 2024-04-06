@@ -13,37 +13,40 @@ namespace Lab08
         public FormAgencia()
         {
             InitializeComponent();
+            // Mostrar
             MostrarAgencias(agenciaService.ListarTodo());
         }
 
         private void MostrarAgencias(List<Agencia> agencias)
         {
+            dgAgencias.DataSource = null;
             if (agencias.Count == 0)
             {
-                dgAgencias.DataSource = null;
                 return;
             }
-            dgAgencias.DataSource = null;
-            dgAgencias.DataSource = agencias;
+            else
+            {
+                dgAgencias.DataSource = agencias;
+            }
         }
 
         private void btnAgregarAgencia_Click(object sender, EventArgs e)
         {
-            // Validación de campos
-            if (tbAgenciaCodigo.Text == "" || tbAgenciaDireccion.Text == "" ||
-                tbAgenciaCiudad.Text == "" || tbAgenciaTelefono.Text == "")
+            // Validación
+            if (tbCodigo.Text == "" || tbDireccion.Text == "" || tbCiudad.Text == "" || tbTelefono.Text == "")
             {
-                MessageBox.Show("Ingrese todos los campos");
+                MessageBox.Show("ingrese todos los campos");
                 return;
             }
 
-            // Crear el objeto
+            // Creación del objeto
             Agencia agencia = new Agencia()
             {
-                Codigo = tbAgenciaCodigo.Text,
-                Direccion = tbAgenciaDireccion.Text,
-                Ciudad = tbAgenciaCiudad.Text,
-                Telefono = tbAgenciaTelefono.Text,
+                Codigo = tbCodigo.Text,
+                Direccion = tbDireccion.Text,
+                Ciudad = tbCiudad.Text,
+                Telefono = tbTelefono.Text,
+                // Importante
                 Inmuebles = new List<Inmueble>()
             };
 
@@ -55,7 +58,7 @@ namespace Lab08
                 return;
             }
 
-            // Mostrar en el DataGrid
+            // Mostrar
             MostrarAgencias(agenciaService.ListarTodo());
         }
 
@@ -68,7 +71,6 @@ namespace Lab08
                 return;
             }
 
-            // Hallar el código de la agencia
             String codigoAgencia = dgAgencias.SelectedRows[0].Cells[0].Value.ToString();
 
             FormInmueble form = new FormInmueble(codigoAgencia);

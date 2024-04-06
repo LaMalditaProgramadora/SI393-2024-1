@@ -1,10 +1,7 @@
 ﻿using Lab08.entities;
-using Lab08.repositores;
+using Lab08.repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab08.services
 {
@@ -14,7 +11,7 @@ namespace Lab08.services
 
         public bool Registrar(String codigoAgencia, Inmueble inmueble)
         {
-            if (inmuebleRepository.Existe(codigoAgencia, inmueble.Codigo))
+            if (inmuebleRepository.Existe(inmueble.Codigo))
             {
                 return false;
             }
@@ -25,9 +22,9 @@ namespace Lab08.services
             }
         }
 
-        public List<Inmueble> ListarTodoPorAgencia(String codigoAgencia)
+        public List<Inmueble> ListarTodo(String codigoAgencia)
         {
-            return inmuebleRepository.ListarTodoPorAgencia(codigoAgencia);
+            return inmuebleRepository.ListarTodo(codigoAgencia);
         }
 
         public List<Inmueble> ListarPorAgenciaVenta(String codigoAgencia)
@@ -35,9 +32,9 @@ namespace Lab08.services
             return inmuebleRepository.ListarPorAgenciaVenta(codigoAgencia);
         }
 
-        public List<Inmueble> ListarPorAgenciaAlquiler(String codigoAgencia)
+        public double MontoTotalAlquilerInmuebles()
         {
-            return inmuebleRepository.ListarPorAgenciaAlquiler(codigoAgencia);
+            return inmuebleRepository.MontoTotalAlquilerInmuebles();
         }
     }
 }
