@@ -12,11 +12,11 @@ namespace Lab09.services
     {
         private PokemonRepository pokemonRepository = new PokemonRepository();
 
-        public bool Insertar(String codigoEntrenador, Pokemon pokemon)
+        public bool Registrar(String codigoEntrenador, Pokemon pokemon)
         {
             if (!pokemonRepository.Existe(pokemon.Codigo))
             {
-                pokemonRepository.Insertar(codigoEntrenador, pokemon);
+                pokemonRepository.Registrar(codigoEntrenador, pokemon);
                 return true;
             }
             else
@@ -28,6 +28,16 @@ namespace Lab09.services
         public List<Pokemon> ListarTodoPorEntrenador(String codigoEntrenador)
         {
             return pokemonRepository.ListarTodo(codigoEntrenador);
+        }
+
+        public List<Pokemon> BuscarLegendarios()
+        {
+            return pokemonRepository.BuscarLegendarios();
+        }
+
+        public List<Pokemon> BuscarPorEdadEntrenadores(int edadMin, int edadMax)
+        {
+            return pokemonRepository.BuscarPorEdadEntrenadores(edadMin, edadMax);
         }
     }
 }

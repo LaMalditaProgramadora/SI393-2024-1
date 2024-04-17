@@ -1,6 +1,7 @@
 ﻿using Lab09.entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lab09.repositories
 {
@@ -8,36 +9,54 @@ namespace Lab09.repositories
     {
         public bool Existe(String codigoPokemon)
         {
-            foreach (Entrenador en in EntrenadorRepository.ListarTodo())
-            {
-                bool existe = en.Pokemons.Exists(po => po.Codigo.Equals(codigoPokemon));
-                if (existe) return true;
-            }
-            return false;
+            List<Entrenador> entrenadores = EntrenadorRepository.ListarTodo();
+            return entrenadores.Exists(e => e.Pokemons.Exists(p => p.Codigo.Equals(codigoPokemon)));
         }
 
-        public void Insertar(String codigoEntrenador, Pokemon pokemon)
+        public void Registrar(String codigoEntrenador, Pokemon pokemon)
         {
-            Entrenador entrenadorEncontrado =
-                EntrenadorRepository.ListarTodo().Find(en => en.Codigo.Equals(codigoEntrenador));
-            if (entrenadorEncontrado != null)
-            {
-                entrenadorEncontrado.Pokemons.Add(pokemon);
-            }
+            List<Entrenador> entrenadores = EntrenadorRepository.ListarTodo();
+            Entrenador entrenador = entrenadores.Find(en => en.Codigo.Equals(codigoEntrenador));
+
+            entrenador.Pokemons.Add(pokemon);
         }
 
         public List<Pokemon> ListarTodo(String codigoEntrenador)
         {
-            Entrenador entrenadorEncontrado =
-                    EntrenadorRepository.ListarTodo().Find(en => en.Codigo.Equals(codigoEntrenador));
-            if (entrenadorEncontrado != null)
+            List<Entrenador> entrenadores = EntrenadorRepository.ListarTodo();
+            Entrenador entrenador = entrenadores.Find(en => en.Codigo.Equals(codigoEntrenador));
+
+            return entrenador.Pokemons;
+        }
+
+        public List<Pokemon> BuscarLegendarios()
+        {
+            List<Entrenador> entrenadores = EntrenadorRepository.ListarTodo();
+            List<Pokemon> pokemonsTemp = new List<Pokemon>();
+
+            foreach (Entrenador entrenador in entrenadores)
             {
-                return entrenadorEncontrado.Pokemons;
+                List<Pokemon> pokemons = entrenador.Pokemons;
+                pokemons = pokemons.Where(p => p.Legendario == true).ToList();
+                pokemonsTemp.AddRange(pokemons);
             }
-            else
+
+            return pokemonsTemp;
+        }
+
+        public List<Pokemon> BuscarPorEdadEntrenadores(int edadMin, int edadMax)
+        {
+            List<Entrenador> entrenadores = EntrenadorRepository.ListarTodo();
+            List<Pokemon> pokemonsTemp = new List<Pokemon>();
+
+            entrenadores = entrenadores.Where(e => e.Edad >= edadMin && e.Edad <= edadMax).ToList();
+
+            foreach (Entrenador entrenador in entrenadores)
             {
-                return new List<Pokemon>();
+                pokemonsTemp.AddRange(entrenador.Pokemons);
             }
+
+            return pokemonsTemp;
         }
     }
 }

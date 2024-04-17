@@ -21,22 +21,24 @@ namespace Lab09
         {
             InitializeComponent();
             this.codigoEntrenador = codigoEntrenador;
-            MostrarPokemonsEnDataGrid(pokemonService.ListarTodoPorEntrenador(codigoEntrenador));
+            MostrarPokemons(pokemonService.ListarTodoPorEntrenador(codigoEntrenador));
             this.codigoEntrenador = codigoEntrenador;
         }
 
-        private void MostrarPokemonsEnDataGrid(List<Pokemon> pokemons)
+        private void MostrarPokemons(List<Pokemon> pokemons)
         {
+            dgPokemons.DataSource = null;
+
             if (pokemons.Count == 0)
             {
-                dgPokemons.DataSource = null;
                 return;
             }
-            dgPokemons.DataSource = null;
-            dgPokemons.DataSource = pokemons;
-
-            lblTotalPokemon.Text = pokemons.Count.ToString();
-            lblTotalPsPokemon.Text = pokemons.Sum(p => p.PuntosSalud).ToString();
+            else
+            {
+                dgPokemons.DataSource = pokemons;
+                lblTotalPokemons.Text = pokemons.Count.ToString();
+                lblTotalPsPokemon.Text = pokemons.Sum(p => p.PuntosSalud).ToString();
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -67,7 +69,7 @@ namespace Lab09
             };
 
             // Insertar
-            bool insertado = pokemonService.Insertar(codigoEntrenador, pokemon);
+            bool insertado = pokemonService.Registrar(codigoEntrenador, pokemon);
             if (!insertado)
             {
                 MessageBox.Show("El código ya existe");
@@ -75,7 +77,7 @@ namespace Lab09
             }
 
             // Actualizar ListView
-            MostrarPokemonsEnDataGrid(pokemonService.ListarTodoPorEntrenador(codigoEntrenador));
+            MostrarPokemons(pokemonService.ListarTodoPorEntrenador(codigoEntrenador));
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -12,11 +12,11 @@ namespace Lab09.services
     {
         private EntrenadorRepository entrenadorRepository = new EntrenadorRepository();
 
-        public bool Insertar(Entrenador en)
+        public bool Registrar(Entrenador en)
         {
             if (!entrenadorRepository.Existe(en.Codigo))
             {
-                entrenadorRepository.Insertar(en);
+                entrenadorRepository.Registrar(en);
                 return true;
             }
             else
@@ -42,6 +42,11 @@ namespace Lab09.services
         public List<Entrenador> ListarPorMenorCantidadPokemon()
         {
             return entrenadorRepository.ListarPorMenorCantidadPokemon();
+        }
+
+        public List<Entrenador> ListarPorMaxPuntosSaludPokemon()
+        {
+            return entrenadorRepository.ListarPorMaxPuntosSaludPokemon();
         }
     }
 }

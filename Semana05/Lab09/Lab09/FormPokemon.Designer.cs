@@ -50,7 +50,7 @@ namespace Lab09
             this.chBEsLegendario = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblTotalPokemon = new System.Windows.Forms.Label();
+            this.lblTotalPokemons = new System.Windows.Forms.Label();
             this.dgPokemons = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -250,14 +250,14 @@ namespace Lab09
             this.label8.TabIndex = 32;
             this.label8.Text = "Total de PS de pokémons:";
             // 
-            // lblTotalPokemon
+            // lblTotalPokemons
             // 
-            this.lblTotalPokemon.AutoSize = true;
-            this.lblTotalPokemon.Location = new System.Drawing.Point(667, 243);
-            this.lblTotalPokemon.Name = "lblTotalPokemon";
-            this.lblTotalPokemon.Size = new System.Drawing.Size(13, 13);
-            this.lblTotalPokemon.TabIndex = 33;
-            this.lblTotalPokemon.Text = "0";
+            this.lblTotalPokemons.AutoSize = true;
+            this.lblTotalPokemons.Location = new System.Drawing.Point(667, 243);
+            this.lblTotalPokemons.Name = "lblTotalPokemons";
+            this.lblTotalPokemons.Size = new System.Drawing.Size(13, 13);
+            this.lblTotalPokemons.TabIndex = 33;
+            this.lblTotalPokemons.Text = "0";
             // 
             // dgPokemons
             // 
@@ -275,7 +275,7 @@ namespace Lab09
             this.ClientSize = new System.Drawing.Size(729, 319);
             this.Controls.Add(this.dgPokemons);
             this.Controls.Add(this.lblTotalPsPokemon);
-            this.Controls.Add(this.lblTotalPokemon);
+            this.Controls.Add(this.lblTotalPokemons);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.chBEsLegendario);
@@ -325,7 +325,7 @@ namespace Lab09
         private CheckBox chBEsLegendario;
         private Label label7;
         private Label label8;
-        private Label lblTotalPokemon;
+        private Label lblTotalPokemons;
         private Button btnReportes;
         private ComboBox dbRegion;
         private TextBox textBox1;

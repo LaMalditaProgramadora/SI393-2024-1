@@ -19,19 +19,22 @@ namespace Lab09
         public FormEntrenador()
         {
             InitializeComponent();
-            MostrarEntrenadoresEnDataGrid(entrenadorService.ListarTodo());
+            MostrarEntrenadores(entrenadorService.ListarTodo());
         }
 
-        private void MostrarEntrenadoresEnDataGrid(List<Entrenador> entrenadores)
+        private void MostrarEntrenadores(List<Entrenador> entrenadores)
         {
+            dgEntrenadores.DataSource = null;
+
             if (entrenadores.Count == 0)
             {
-                dgEntrenadores.DataSource = null;
                 return;
             }
-            dgEntrenadores.DataSource = null;
-            dgEntrenadores.DataSource = entrenadores;
-            lblTotalEntrenadores.Text = entrenadores.Count.ToString();
+            else
+            {
+                dgEntrenadores.DataSource = entrenadores;
+                lblTotalEntrenadores.Text = entrenadores.Count.ToString();
+            }
         }
 
         private void btnRegistrarEntrenador_Click(object sender, EventArgs e)
@@ -54,7 +57,7 @@ namespace Lab09
             };
 
             // Insertar
-            bool insertado = entrenadorService.Insertar(entrenador);
+            bool insertado = entrenadorService.Registrar(entrenador);
             if (!insertado)
             {
                 MessageBox.Show("El código ya existe");
@@ -62,7 +65,7 @@ namespace Lab09
             }
 
             // Actualizar ListView
-            MostrarEntrenadoresEnDataGrid(entrenadorService.ListarTodo());
+            MostrarEntrenadores(entrenadorService.ListarTodo());
         }
 
         private void btnVerPokemon_Click(object sender, EventArgs e)

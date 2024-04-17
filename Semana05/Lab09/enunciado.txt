@@ -1,27 +1,29 @@
 Ejercicio MultiLists III
 
-Registro de informaci�n de la Liga Pok�mon
+Registro de informacion de la Liga Pokemon
 
-Se requiere una aplicaci�n en C# para realizar el registro de la informaci�n de la Liga Pok�mon. Por lo tanto, se solicita implementar los siguientes requisitos funcionales.
+Se requiere una aplicacion en C# para realizar el registro de la informacion de la Liga Pokemon. Por lo tanto, se solicita implementar los siguientes requisitos funcionales.
 
-* Registrar los datos de un entrenador. Un entrenador puede tener muchos pok�mons (m�ximo 6).
-* Registrar los datos de un pok�mon. Un pok�mon debe estar asignado a un entrenador.
+* Registrar los datos de un entrenador. Un entrenador puede tener muchos pokemons (maximo 6).
+* Registrar los datos de un pokemon. Un pokemon debe estar asignado a un entrenador.
 * Listar los entrenadores.
-* Listar todos los pok�mons de un entrenador.
-* Listar la cantidad total de puntos de salud de los pok�mons de un entrenador.
-* Listar la informaci�n de los entrenadores que pertenecen a una determinada regi�n.
-* Listar la informaci�n de los entrenadores que tienen un pok�mon espec�fico.
-* Listar la informaci�n de los entrenadores que tienen la menor cantidad de pok�mons registrados.
+* Listar todos los pokemons de un entrenador.
+* Listar todos los pokemons de un entrenador en determinado rango de edad.
+* Listar la cantidad total de puntos de salud de los pokemons de un entrenador.
+* Listar los entrenadores que pertenecen a una determinada region.
+* Listar los entrenadores que tienen un pokemon especifico.
+* Listar los entrenadores que tienen la menor cantidad de pokemons registrados.
+* Listar los entrenadores que tienen los pokemons con la mayor cantidad de puntos de salud.
 
-La informaci�n que se necesita es la siguiente:
+La informacion que se necesita es la siguiente:
 
-* Entrenador: C�digo, Nombre, Edad, Regi�n.
-* Pok�mon: C�digo, Nombre, Apodo, Tipo, Puntos de Salud, Es Legendario.
+* Entrenador: Codigo, Nombre, Edad, Region.
+* Pokemon: Codigo, Nombre, Apodo, Tipo, Puntos de Salud, Es Legendario.
 
 Considere que las regiones pueden ser: Kanto, Johto, Hoenn, Sinnoh, Teselia/Unova, Kalos, Alola, Galar y Paldea.
 
-Considere que los Tipos de Pok�mon pueden ser: Acero, Agua, Bicho, Drag�n, El�ctrico, Fantasma, Fuego, Hada, Hielo, Lucha, Normal, Planta, Ps�quico, Roca, Siniestro, Tierra, Veneno, Volador
+Considere que los Tipos de Pokemon pueden ser: Acero, Agua, Bicho, Dragon, Electrico, Fantasma, Fuego, Hada, Hielo, Lucha, Normal, Planta, Psiquico, Roca, Siniestro, Tierra, Veneno, Volador
 
 Tomar en cuenta lo siguiente:
-* El c�digo del entrenador es �nico.
-* El c�digo de pok�mon es �nico.
+* El codigo del entrenador es unico.
+* El codigo de pokemon es unico.

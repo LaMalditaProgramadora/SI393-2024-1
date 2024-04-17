@@ -13,7 +13,7 @@ namespace Lab09.repositories
 
         public EntrenadorRepository() { }
 
-        public void Insertar(Entrenador entrenador)
+        public void Registrar(Entrenador entrenador)
         {
             entrenadores.Add(entrenador);
         }
@@ -36,19 +36,59 @@ namespace Lab09.repositories
         public List<Entrenador> ListarPorNombrePokemon(String nombrePokemon)
         {
             List<Entrenador> entrenadoresTemp =
-                entrenadores.Where(e => e.Pokemons.Any(p => p.Nombre.Equals(nombrePokemon))).ToList();
+                entrenadores.Where(e => e.Pokemons.Exists(p => p.Nombre.Contains(nombrePokemon))).ToList();
             return entrenadoresTemp;
         }
 
         public List<Entrenador> ListarPorMenorCantidadPokemon()
         {
-            int menorCantidadPokemons =
-                entrenadores.Count == 0
-                ? 0
-                : entrenadores.Min(e => e.Pokemons.Count);
+            List<Entrenador> entrenadoresTemp = new List<Entrenador>();
+            int menorCantidadPokemons = 999;
 
-            List<Entrenador> entrenadoresTemp =
-               entrenadores.Where(e => e.Pokemons.Count == menorCantidadPokemons).ToList();
+            foreach (Entrenador entrenador in entrenadores)
+            {
+                List<Pokemon> pokemons = entrenador.Pokemons;
+                int cantPokemon = pokemons.Count;
+
+                if (cantPokemon < menorCantidadPokemons)
+                {
+                    menorCantidadPokemons = cantPokemon;
+                    entrenadoresTemp.Clear();
+                    entrenadoresTemp.Add(entrenador);
+                }
+                else if (cantPokemon == menorCantidadPokemons)
+                {
+                    entrenadoresTemp.Add(entrenador);
+                }
+            }
+            return entrenadoresTemp;
+        }
+
+        public List<Entrenador> ListarPorMaxPuntosSaludPokemon()
+        {
+            List<Entrenador> entrenadoresTemp = new List<Entrenador>();
+            int maxPuntosSaludTotal = 0;
+
+            foreach (Entrenador entrenador in entrenadores)
+            {
+                List<Pokemon> pokemons = entrenador.Pokemons;
+
+                if (pokemons.Count != 0)
+                {
+                    int maxPuntosSaludParaEntrenador = pokemons.Max(p => p.PuntosSalud);
+
+                    if (maxPuntosSaludParaEntrenador > maxPuntosSaludTotal)
+                    {
+                        maxPuntosSaludTotal = maxPuntosSaludParaEntrenador;
+                        entrenadoresTemp.Clear();
+                        entrenadoresTemp.Add(entrenador);
+                    }
+                    else if (maxPuntosSaludParaEntrenador == maxPuntosSaludTotal)
+                    {
+                        entrenadoresTemp.Add(entrenador);
+                    }
+                }
+            }
             return entrenadoresTemp;
         }
     }

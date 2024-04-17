@@ -15,23 +15,41 @@ namespace Lab09
     public partial class FormReporte : Form
     {
         private EntrenadorService entrenadorService = new EntrenadorService();
+        private PokemonService pokemonService = new PokemonService();
 
         public FormReporte()
         {
             InitializeComponent();
         }
 
-        private void MostrarEntrenadoresEnDataGrid(List<Entrenador> entrenadores)
+        private void MostrarEntrenadores(List<Entrenador> entrenadores)
         {
+            dgEntrenadores.DataSource = null;
+
             if (entrenadores.Count == 0)
             {
-                dgEntrenadores.DataSource = null;
                 return;
             }
-            dgEntrenadores.DataSource = null;
-            dgEntrenadores.DataSource = entrenadores;
+            else
+            {
+                dgEntrenadores.DataSource = entrenadores;
+                lblTotalEntrenadores.Text = entrenadores.Count.ToString();
+            }
+        }
 
-            lblTotalEntrenadores.Text = entrenadores.Count.ToString();
+        private void MostrarPokemons(List<Pokemon> pokemons)
+        {
+            dgPokemons.DataSource = null;
+
+            if (pokemons.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                dgPokemons.DataSource = pokemons;
+                lblTotalPokemons.Text = pokemons.Count.ToString();
+            }
         }
 
         private void btnBuscarPorNombrePokemon_Click(object sender, EventArgs e)
@@ -43,8 +61,9 @@ namespace Lab09
                 return;
             }
 
+            String nombre = tbNombre.Text;
             // Listar
-            MostrarEntrenadoresEnDataGrid(entrenadorService.ListarPorNombrePokemon(tbNombre.Text));
+            MostrarEntrenadores(entrenadorService.ListarPorNombrePokemon(nombre));
         }
 
         private void btnBuscarPorRegion_Click(object sender, EventArgs e)
@@ -56,14 +75,35 @@ namespace Lab09
                 return;
             }
 
+            String region = cbRegion.Text;
             // Listar
-            MostrarEntrenadoresEnDataGrid(entrenadorService.ListarPorRegion(cbRegion.Text));
+            MostrarEntrenadores(entrenadorService.ListarPorRegion(region));
         }
 
         private void btnBuscarPorMenorCantPokemon_Click(object sender, EventArgs e)
         {
             // Listar
-            MostrarEntrenadoresEnDataGrid(entrenadorService.ListarPorMenorCantidadPokemon());
+            MostrarEntrenadores(entrenadorService.ListarPorMenorCantidadPokemon());
+        }
+
+        private void btnBuscarPorRangoEdadEntrenadores_Click(object sender, EventArgs e)
+        {
+            // Validación de campos
+            if (tbEdadMin.Text == "" || tbEdadMax.Text == "")
+            {
+                MessageBox.Show("Ingrese el rango de edad");
+                return;
+            }
+
+            int edadMin = int.Parse(tbEdadMin.Text);
+            int edadMax = int.Parse(tbEdadMax.Text);
+            // Listar
+            MostrarPokemons(pokemonService.BuscarPorEdadEntrenadores(edadMin, edadMax));
+        }
+
+        private void btnBuscarLegendarios_Click(object sender, EventArgs e)
+        {
+            MostrarPokemons(pokemonService.BuscarLegendarios());
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
