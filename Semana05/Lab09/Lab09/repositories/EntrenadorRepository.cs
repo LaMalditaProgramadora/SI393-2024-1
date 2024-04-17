@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab09.repositories
 {
@@ -11,7 +9,10 @@ namespace Lab09.repositories
     {
         private static List<Entrenador> entrenadores = new List<Entrenador>();
 
-        public EntrenadorRepository() { }
+        public bool Existe(String codigo)
+        {
+            return entrenadores.Exists(en => en.Codigo.Equals(codigo));
+        }
 
         public void Registrar(Entrenador entrenador)
         {
@@ -23,27 +24,20 @@ namespace Lab09.repositories
             return entrenadores;
         }
 
-        public bool Existe(String codigo)
-        {
-            return entrenadores.Exists(en => en.Codigo.Equals(codigo));
-        }
-
         public List<Entrenador> ListarPorRegion(String region)
         {
-            return entrenadores.FindAll(en => en.Region.Equals(region));
+            return entrenadores.Where(e => e.Region.Equals(region)).ToList();
         }
 
         public List<Entrenador> ListarPorNombrePokemon(String nombrePokemon)
         {
-            List<Entrenador> entrenadoresTemp =
-                entrenadores.Where(e => e.Pokemons.Exists(p => p.Nombre.Contains(nombrePokemon))).ToList();
-            return entrenadoresTemp;
+            return entrenadores.Where(e => e.Pokemons.Exists(p => p.Nombre.Contains(nombrePokemon))).ToList();
         }
 
         public List<Entrenador> ListarPorMenorCantidadPokemon()
         {
             List<Entrenador> entrenadoresTemp = new List<Entrenador>();
-            int menorCantidadPokemons = 999;
+            int menorCantidadPokemons = 9999;
 
             foreach (Entrenador entrenador in entrenadores)
             {
@@ -76,7 +70,6 @@ namespace Lab09.repositories
                 if (pokemons.Count != 0)
                 {
                     int maxPuntosSaludParaEntrenador = pokemons.Max(p => p.PuntosSalud);
-
                     if (maxPuntosSaludParaEntrenador > maxPuntosSaludTotal)
                     {
                         maxPuntosSaludTotal = maxPuntosSaludParaEntrenador;
@@ -89,6 +82,7 @@ namespace Lab09.repositories
                     }
                 }
             }
+
             return entrenadoresTemp;
         }
     }

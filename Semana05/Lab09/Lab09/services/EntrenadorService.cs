@@ -14,14 +14,14 @@ namespace Lab09.services
 
         public bool Registrar(Entrenador en)
         {
-            if (!entrenadorRepository.Existe(en.Codigo))
+            if (entrenadorRepository.Existe(en.Codigo))
             {
-                entrenadorRepository.Registrar(en);
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                entrenadorRepository.Registrar(en);
+                return true;
             }
         }
 

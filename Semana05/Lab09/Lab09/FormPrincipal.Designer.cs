@@ -56,7 +56,7 @@ namespace Lab09
             this.btnRegistrarEntrenador.Name = "btnRegistrarEntrenador";
             this.btnRegistrarEntrenador.Size = new System.Drawing.Size(117, 33);
             this.btnRegistrarEntrenador.TabIndex = 1;
-            this.btnRegistrarEntrenador.Text = "Registrar Entrenador";
+            this.btnRegistrarEntrenador.Text = "Ver Entrenador";
             this.btnRegistrarEntrenador.UseVisualStyleBackColor = true;
             this.btnRegistrarEntrenador.Click += new System.EventHandler(this.btnRegistrarEntrenador_Click);
             // 

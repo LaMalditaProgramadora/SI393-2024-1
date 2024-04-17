@@ -22,7 +22,6 @@ namespace Lab09
             InitializeComponent();
             this.codigoEntrenador = codigoEntrenador;
             MostrarPokemons(pokemonService.ListarTodoPorEntrenador(codigoEntrenador));
-            this.codigoEntrenador = codigoEntrenador;
         }
 
         private void MostrarPokemons(List<Pokemon> pokemons)
@@ -68,9 +67,9 @@ namespace Lab09
                 Legendario = chBEsLegendario.Checked
             };
 
-            // Insertar
-            bool insertado = pokemonService.Registrar(codigoEntrenador, pokemon);
-            if (!insertado)
+            // Registramos
+            bool registrado = pokemonService.Registrar(codigoEntrenador, pokemon);
+            if (!registrado)
             {
                 MessageBox.Show("El código ya existe");
                 return;

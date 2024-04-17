@@ -61,9 +61,8 @@ namespace Lab09
                 return;
             }
 
-            String nombre = tbNombre.Text;
-            // Listar
-            MostrarEntrenadores(entrenadorService.ListarPorNombrePokemon(nombre));
+            String nombrePokemon = tbNombre.Text;
+            MostrarEntrenadores(entrenadorService.ListarPorNombrePokemon(nombrePokemon));
         }
 
         private void btnBuscarPorRegion_Click(object sender, EventArgs e)
@@ -71,19 +70,22 @@ namespace Lab09
             // Validación de campos
             if (cbRegion.Text == "")
             {
-                MessageBox.Show("Ingrese la región");
+                MessageBox.Show("Ingrese laregión");
                 return;
             }
 
             String region = cbRegion.Text;
-            // Listar
             MostrarEntrenadores(entrenadorService.ListarPorRegion(region));
         }
 
         private void btnBuscarPorMenorCantPokemon_Click(object sender, EventArgs e)
         {
-            // Listar
             MostrarEntrenadores(entrenadorService.ListarPorMenorCantidadPokemon());
+        }
+
+        private void btnBuscarPorMaxPSPokemon_Click(object sender, EventArgs e)
+        {
+            MostrarEntrenadores(entrenadorService.ListarPorMaxPuntosSaludPokemon());
         }
 
         private void btnBuscarPorRangoEdadEntrenadores_Click(object sender, EventArgs e)
@@ -97,13 +99,12 @@ namespace Lab09
 
             int edadMin = int.Parse(tbEdadMin.Text);
             int edadMax = int.Parse(tbEdadMax.Text);
-            // Listar
-            MostrarPokemons(pokemonService.BuscarPorEdadEntrenadores(edadMin, edadMax));
+            MostrarPokemons(pokemonService.ListarPorEdadEntrenadores(edadMin, edadMax));
         }
 
         private void btnBuscarLegendarios_Click(object sender, EventArgs e)
         {
-            MostrarPokemons(pokemonService.BuscarLegendarios());
+            MostrarPokemons(pokemonService.ListarLegendarios());
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

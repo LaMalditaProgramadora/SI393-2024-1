@@ -56,15 +56,15 @@ namespace Lab09
                 Pokemons = new List<Pokemon>()
             };
 
-            // Insertar
-            bool insertado = entrenadorService.Registrar(entrenador);
-            if (!insertado)
+            // Registrar
+            bool registrado = entrenadorService.Registrar(entrenador);
+            if (!registrado)
             {
                 MessageBox.Show("El código ya existe");
                 return;
             }
 
-            // Actualizar ListView
+            // Actualizar Datagrid
             MostrarEntrenadores(entrenadorService.ListarTodo());
         }
 
@@ -83,15 +83,15 @@ namespace Lab09
             form.Show();
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnReportes_Click(object sender, EventArgs e)
         {
             FormReporte form = new FormReporte();
             form.Show();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

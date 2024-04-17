@@ -29,33 +29,31 @@ namespace Lab09.repositories
             return entrenador.Pokemons;
         }
 
-        public List<Pokemon> BuscarLegendarios()
+        public List<Pokemon> ListarLegendarios()
         {
             List<Entrenador> entrenadores = EntrenadorRepository.ListarTodo();
             List<Pokemon> pokemonsTemp = new List<Pokemon>();
 
-            foreach (Entrenador entrenador in entrenadores)
+            foreach(Entrenador entrenador in entrenadores)
             {
                 List<Pokemon> pokemons = entrenador.Pokemons;
                 pokemons = pokemons.Where(p => p.Legendario == true).ToList();
                 pokemonsTemp.AddRange(pokemons);
             }
-
             return pokemonsTemp;
         }
 
-        public List<Pokemon> BuscarPorEdadEntrenadores(int edadMin, int edadMax)
+        public List<Pokemon> ListarPorEdadEntrenadores(int edadMin, int edadMax)
         {
             List<Entrenador> entrenadores = EntrenadorRepository.ListarTodo();
             List<Pokemon> pokemonsTemp = new List<Pokemon>();
-
             entrenadores = entrenadores.Where(e => e.Edad >= edadMin && e.Edad <= edadMax).ToList();
 
             foreach (Entrenador entrenador in entrenadores)
             {
-                pokemonsTemp.AddRange(entrenador.Pokemons);
+                List<Pokemon> pokemons = entrenador.Pokemons;
+                pokemonsTemp.AddRange(pokemons);
             }
-
             return pokemonsTemp;
         }
     }

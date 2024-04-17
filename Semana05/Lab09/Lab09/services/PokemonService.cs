@@ -14,14 +14,14 @@ namespace Lab09.services
 
         public bool Registrar(String codigoEntrenador, Pokemon pokemon)
         {
-            if (!pokemonRepository.Existe(pokemon.Codigo))
+            if (pokemonRepository.Existe(pokemon.Codigo))
             {
-                pokemonRepository.Registrar(codigoEntrenador, pokemon);
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                pokemonRepository.Registrar(codigoEntrenador, pokemon);
+                return true;
             }
         }
 
@@ -30,14 +30,14 @@ namespace Lab09.services
             return pokemonRepository.ListarTodo(codigoEntrenador);
         }
 
-        public List<Pokemon> BuscarLegendarios()
+        public List<Pokemon> ListarLegendarios()
         {
-            return pokemonRepository.BuscarLegendarios();
+            return pokemonRepository.ListarLegendarios();
         }
 
-        public List<Pokemon> BuscarPorEdadEntrenadores(int edadMin, int edadMax)
+        public List<Pokemon> ListarPorEdadEntrenadores(int edadMin, int edadMax)
         {
-            return pokemonRepository.BuscarPorEdadEntrenadores(edadMin, edadMax);
+            return pokemonRepository.ListarPorEdadEntrenadores(edadMin, edadMax);
         }
     }
 }
