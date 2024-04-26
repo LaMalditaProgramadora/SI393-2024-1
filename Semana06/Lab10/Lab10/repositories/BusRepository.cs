@@ -29,18 +29,26 @@ namespace Lab10.repositories
         public List<Bus> ListarBusesConRutasMasLargas()
         {
             List<Bus> busesTemp = new List<Bus>();
-            if (buses.Count != 0)
-            {
-                double maxKilometros = buses.Max(
-                    // if
-                    b => b.Rutas.Count == 0
-                    // primera opción
-                    ? 0
-                    // segunda opción
-                    : b.Rutas.Max(r => r.Kilometros));
+            double rutaMasLargaTotal = 0;
 
-                // Buscar los buses con la ruta más larga (kilómetros)
-                busesTemp = buses.Where(b => b.Rutas.Exists(r => r.Kilometros == maxKilometros)).ToList();
+            foreach (Bus bus in buses)
+            {
+                List<Ruta> rutas = bus.Rutas;
+                if (rutas.Count != 0)
+                {
+                    double rutaMasLargaEnBus = rutas.Max(r => r.Kilometros);
+
+                    if (rutaMasLargaEnBus > rutaMasLargaTotal)
+                    {
+                        rutaMasLargaTotal = rutaMasLargaEnBus;
+                        busesTemp.Clear();
+                        busesTemp.Add(bus);
+                    }
+                    else if (rutaMasLargaEnBus == rutaMasLargaTotal)
+                    {
+                        busesTemp.Add(bus);
+                    }
+                }
             }
             return busesTemp;
         }
@@ -48,18 +56,23 @@ namespace Lab10.repositories
         public List<Bus> ListarBusesConMenosRutas()
         {
             List<Bus> busesTemp = new List<Bus>();
-            if (buses.Count != 0)
-            {
-                int menorCantRutas =
-                    // if
-                    buses.Count == 0
-                    // primera opción
-                    ? 0
-                    // segunda opción
-                    : buses.Min(b => b.Rutas.Count);
+            int menorCantRutasTotal = 99999;
 
-                // Buscar los buses menos rutas
-                busesTemp = buses.Where(b => b.Rutas.Count == menorCantRutas).ToList();
+            foreach (Bus bus in buses)
+            {
+                List<Ruta> rutas = bus.Rutas;
+                int cantRutasEnBus = rutas.Count;
+
+                if (cantRutasEnBus < menorCantRutasTotal)
+                {
+                    menorCantRutasTotal = cantRutasEnBus;
+                    busesTemp.Clear();
+                    busesTemp.Add(bus);
+                }
+                else if (cantRutasEnBus == menorCantRutasTotal)
+                {
+                    busesTemp.Add(bus);
+                }
             }
             return busesTemp;
         }

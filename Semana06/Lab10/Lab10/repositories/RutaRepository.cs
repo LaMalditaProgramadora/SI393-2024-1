@@ -56,14 +56,15 @@ namespace Lab10.repositories
         public List<Ruta> ListarRutasPorConductorBus(String conductor)
         {
             List<Bus> buses = BusRepository.ListarTodo();
-            List<Bus> busesTemp = buses.Where(b => b.Conductor.Equals(conductor)).ToList();
+            buses = buses.Where(b => b.Conductor.Equals(conductor)).ToList();
             List<Ruta> rutasTemp = new List<Ruta>();
 
             // Recorre todos los buses con el nombre del conductor
-            foreach (Bus bus in busesTemp)
+            foreach (Bus bus in buses)
             {
                 rutasTemp.AddRange(bus.Rutas);
             }
+
             return rutasTemp;
         }
     }
