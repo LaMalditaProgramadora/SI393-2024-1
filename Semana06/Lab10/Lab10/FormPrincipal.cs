@@ -19,8 +19,8 @@ namespace Lab10
 
         private void btnVerBuses_Click(object sender, EventArgs e)
         {
-            FormBus formBus = new FormBus();
-            formBus.Show();
+            FormBus form = new FormBus();
+            form.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

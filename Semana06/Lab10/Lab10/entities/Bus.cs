@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab10.entities
 {
-    internal class Bus
+    class Bus
     {
         public Bus() { }
         public String Matricula { get; set; }

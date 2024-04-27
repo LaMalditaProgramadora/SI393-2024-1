@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace Lab10.services
 {
-    internal class BusService
+    class BusService
     {
         private BusRepository busRepository = new BusRepository();
-        public BusService() { }
 
         public bool Registrar(Bus bus)
         {

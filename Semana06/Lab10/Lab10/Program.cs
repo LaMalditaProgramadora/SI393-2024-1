@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Lab10
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.

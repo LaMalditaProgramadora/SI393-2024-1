@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace Lab10.services
 {
-    internal class RutaService
+    class RutaService
     {
         private RutaRepository rutaRepository = new RutaRepository();
-
-        public RutaService() { }
 
         public bool Registrar(String matricula, Ruta ruta)
         {

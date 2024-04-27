@@ -22,36 +22,41 @@ namespace Lab10
             InitializeComponent();
         }
 
-        private void MostrarBusesEnDataGrid(List<Bus> buses)
+        private void MostrarBuses(List<Bus> buses)
         {
+            dgBuses.DataSource = null;
+
             if (buses.Count == 0)
             {
-                dgBuses.DataSource = null;
                 return;
             }
-            dgBuses.DataSource = null;
-            dgBuses.DataSource = buses;
+            else
+            {
+                dgBuses.DataSource = buses;
+            }
         }
 
-        private void MostrarRutasEnDataGrid(List<Ruta> rutas)
+        private void MostrarRutas(List<Ruta> rutas)
         {
+            dgRutas.DataSource = null;
             if (rutas.Count == 0)
             {
-                dgRutas.DataSource = null;
                 return;
             }
-            dgRutas.DataSource = null;
-            dgRutas.DataSource = rutas;
+            else
+            {
+                dgRutas.DataSource = rutas;
+            }
         }
 
         private void btnBuscarBusesConRutasMasLargas_Click(object sender, EventArgs e)
         {
-            MostrarBusesEnDataGrid(busService.ListarBusesConRutasMasLargas());
+            MostrarBuses(busService.ListarBusesConRutasMasLargas());
         }
 
         private void btnBuscarBusesConMenosRutas_Click(object sender, EventArgs e)
         {
-            MostrarBusesEnDataGrid(busService.ListarBusesConMenosRutas());
+            MostrarBuses(busService.ListarBusesConMenosRutas());
         }
 
         private void btnBuscarRutasPorConductorBus_Click(object sender, EventArgs e)
@@ -64,7 +69,7 @@ namespace Lab10
             }
 
             String conductor = tbConductor.Text;
-            MostrarRutasEnDataGrid(rutaService.ListarRutasPorConductorBus(conductor));
+            MostrarRutas(rutaService.ListarRutasPorConductorBus(conductor));
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

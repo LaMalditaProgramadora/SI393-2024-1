@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{41E477F0-97B7-4006-BE57-D69560EC0BAA}</ProjectGuid>
+    <ProjectGuid>{89BBC1F0-C5ED-4813-8565-2D58CAEF8294}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Lab10</RootNamespace>
     <AssemblyName>Lab10</AssemblyName>
@@ -112,5 +112,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

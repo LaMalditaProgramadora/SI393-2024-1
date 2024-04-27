@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab10.entities
 {
-    internal class Ruta
+    class Ruta
     {
         public Ruta() { }
         public String Codigo { get; set; }

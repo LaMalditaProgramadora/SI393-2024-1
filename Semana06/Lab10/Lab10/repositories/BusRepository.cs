@@ -2,14 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Lab10.repositories
 {
-    internal class BusRepository
+    class BusRepository
     {
         private static List<Bus> buses = new List<Bus>();
-
-        public BusRepository() { }
 
         public bool Existe(String matricula)
         {
@@ -56,7 +56,7 @@ namespace Lab10.repositories
         public List<Bus> ListarBusesConMenosRutas()
         {
             List<Bus> busesTemp = new List<Bus>();
-            int menorCantRutasTotal = 99999;
+            int menorCantRutasTotal = 99999999;
 
             foreach (Bus bus in buses)
             {
@@ -65,7 +65,7 @@ namespace Lab10.repositories
 
                 if (cantRutasEnBus < menorCantRutasTotal)
                 {
-                    menorCantRutasTotal = cantRutasEnBus;
+                    cantRutasEnBus = menorCantRutasTotal;
                     busesTemp.Clear();
                     busesTemp.Add(bus);
                 }

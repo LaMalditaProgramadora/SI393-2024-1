@@ -2,36 +2,34 @@
 using Lab10.services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lab10
 {
     public partial class FormRuta : Form
     {
+        String matricula;
         private RutaService rutaService = new RutaService();
-        private String matricula;
 
         public FormRuta(String matricula)
         {
             InitializeComponent();
             this.matricula = matricula;
+            // Mostrar en el ListView
+            MostrarRutas(rutaService.ListarTodo(matricula));
         }
 
-        private void MostrarRutasEnDataGrid(List<Ruta> rutas)
+        private void MostrarRutas(List<Ruta> rutas)
         {
+            dgRutas.DataSource = null;
             if (rutas.Count == 0)
             {
-                dgRutas.DataSource = null;
                 return;
             }
-            dgRutas.DataSource = null;
-            dgRutas.DataSource = rutas;
+            else
+            {
+                dgRutas.DataSource = rutas;
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -61,7 +59,7 @@ namespace Lab10
             }
 
             // Mostrar en el ListView
-            MostrarRutasEnDataGrid(rutaService.ListarTodo(matricula));
+            MostrarRutas(rutaService.ListarTodo(matricula));
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
