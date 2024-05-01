@@ -22,8 +22,8 @@ namespace Lab12.repositories
 
             if (reportes.Count == 0) return new List<Reporte>();
 
-            int cantMaxPacientes = reportes.Max(r => r.Cantidad);
-            reportes = reportes.Where(r => r.Cantidad == cantMaxPacientes).ToList();
+            int cantMaxDoctores = reportes.Max(r => r.Cantidad);
+            reportes = reportes.Where(r => r.Cantidad == cantMaxDoctores).ToList();
             return reportes;
         }
     }

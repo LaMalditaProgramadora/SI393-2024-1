@@ -7,7 +7,6 @@ namespace Lab12.services
     internal class DoctorService
     {
         private DoctorRepository doctorRepository = new DoctorRepository();
-        public DoctorService() { }
 
         public bool Registrar(Doctor doctor)
         {

@@ -9,8 +9,6 @@ namespace Lab12.services
     {
         private PacienteRepository pacienteRepository = new PacienteRepository();
 
-        public PacienteService() { }
-
         public bool Registrar(String nroColegiatura, Paciente paciente)
         {
             if (pacienteRepository.Existe(paciente.Dni))

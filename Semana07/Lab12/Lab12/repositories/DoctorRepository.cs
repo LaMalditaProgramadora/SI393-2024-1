@@ -56,7 +56,7 @@ namespace Lab12.repositories
             foreach (Doctor doctor in doctores)
             {
                 List<Paciente> pacientes = doctor.Pacientes;
-                int cantidadPacientesPorDoctor = doctor.Pacientes.Count;
+                int cantidadPacientesPorDoctor = pacientes.Count;
                 if (cantidadPacientesPorDoctor < menorCantidadPacientesTotal)
                 {
                     menorCantidadPacientesTotal = cantidadPacientesPorDoctor;
