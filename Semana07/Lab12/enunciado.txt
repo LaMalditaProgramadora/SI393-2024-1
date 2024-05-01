@@ -1,0 +1,14 @@
+Doctor: Nro. de colegiatura, nombre completo, especialidad.
+Paciente: Dni, NombreCompleto, Edad.
+
+Un doctor tiene un listado de pacientes.
+No se puede repetir Nro de colegiatura ni Dni.
+
+* Registrar doctores.
+* Listar doctores.
+* Registrar paciente a un doctor.
+* Listar pacientes de un doctor.
+* Listar doctores con pacientes con más edad.
+* Listar doctores con menos pacientes.
+* Listar pacientes por especialidad de doctor.
+* Listar especialidades con más doctores.

@@ -1,8 +1,7 @@
 ﻿using Lab12.entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
-using System.Drawing;
 
 namespace Lab12.repositories
 {
@@ -10,11 +9,9 @@ namespace Lab12.repositories
     {
         private static List<Doctor> doctores = new List<Doctor>();
 
-        public DoctorRepository() { }
-
-        public bool Existe(String NroColegiatura)
+        public bool Existe(String nroColegiatura)
         {
-            return doctores.Exists(doctor => doctor.NroColegiatura.Equals(NroColegiatura));
+            return doctores.Exists(doctor => doctor.NroColegiatura.Equals(nroColegiatura));
         }
 
         public void Registrar(Doctor doctor)
@@ -30,32 +27,47 @@ namespace Lab12.repositories
         public List<Doctor> ListarDoctoresConPacientesConMasEdad()
         {
             List<Doctor> doctoresTemp = new List<Doctor>();
-            int maxEdad = doctores.Max(
-                    // if
-                    d => d.Pacientes.Count == 0
-                    // primera opción (Si el doctor no tiene pacientes)
-                    ? 0
-                    // segunda opción (Aquí hallamos la máxima edad)
-                    : d.Pacientes.Max(p => p.Edad));
-
-            // Buscar los doctores con los pacientes con más edad
-            doctoresTemp = doctores.Where(d => d.Pacientes.Exists(p => p.Edad == maxEdad)).ToList();
+            int mayorEdadPacienteTotal = int.MinValue;
+            foreach (Doctor doctor in doctores)
+            {
+                List<Paciente> pacientes = doctor.Pacientes;
+                if (pacientes.Count != 0)
+                {
+                    int mayorEdadPacientePorDoctor = pacientes.Max(pa => pa.Edad);
+                    if (mayorEdadPacientePorDoctor > mayorEdadPacienteTotal)
+                    {
+                        mayorEdadPacienteTotal = mayorEdadPacientePorDoctor;
+                        doctoresTemp.Clear();
+                        doctoresTemp.Add(doctor);
+                    }
+                    else if (mayorEdadPacientePorDoctor == mayorEdadPacienteTotal)
+                    {
+                        doctoresTemp.Add(doctor);
+                    }
+                }
+            }
             return doctoresTemp;
         }
 
         public List<Doctor> ListarDoctoresConMenosPacientes()
         {
             List<Doctor> doctoresTemp = new List<Doctor>();
-            int menorCantPacientes =
-                    // if
-                    doctores.Count == 0
-                    // primera opción (Si no hay doctores)
-                    ? 0
-                    // segunda opción (Aquí hallamos la menor cantidad de pacientes)
-                    : doctores.Min(d => d.Pacientes.Count);
-
-            // Buscar los doctores con los pacientes con más edad
-            doctoresTemp = doctores.Where(d => d.Pacientes.Count == menorCantPacientes).ToList();
+            int menorCantidadPacientesTotal = int.MaxValue;
+            foreach (Doctor doctor in doctores)
+            {
+                List<Paciente> pacientes = doctor.Pacientes;
+                int cantidadPacientesPorDoctor = doctor.Pacientes.Count;
+                if (cantidadPacientesPorDoctor < menorCantidadPacientesTotal)
+                {
+                    menorCantidadPacientesTotal = cantidadPacientesPorDoctor;
+                    doctoresTemp.Clear();
+                    doctoresTemp.Add(doctor);
+                }
+                else if (cantidadPacientesPorDoctor == menorCantidadPacientesTotal)
+                {
+                    doctoresTemp.Add(doctor);
+                }
+            }
             return doctoresTemp;
         }
     }

@@ -2,14 +2,7 @@
 using Lab12.services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 
 namespace Lab12
 {
@@ -20,18 +13,20 @@ namespace Lab12
         public FormDoctor()
         {
             InitializeComponent();
-            MostrarDoctoresEnDataGrid(doctorService.ListarTodo());
+            MostrarDoctores(doctorService.ListarTodo());
         }
 
-        private void MostrarDoctoresEnDataGrid(List<Doctor> doctores)
+        private void MostrarDoctores(List<Doctor> doctores)
         {
+            dgDoctores.DataSource = null;
             if (doctores.Count == 0)
             {
-                dgDoctores.DataSource = null;
                 return;
             }
-            dgDoctores.DataSource = null;
-            dgDoctores.DataSource = doctores;
+            else
+            {
+                dgDoctores.DataSource = doctores;
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -61,8 +56,7 @@ namespace Lab12
                 return;
             }
 
-            // Mostrar en el ListView
-            MostrarDoctoresEnDataGrid(doctorService.ListarTodo());
+            MostrarDoctores(doctorService.ListarTodo());
         }
 
         private void btnVerPacientes_Click(object sender, EventArgs e)

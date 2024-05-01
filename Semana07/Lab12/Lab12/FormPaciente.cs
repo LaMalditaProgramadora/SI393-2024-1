@@ -2,12 +2,6 @@
 using Lab12.services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lab12
@@ -21,18 +15,20 @@ namespace Lab12
         {
             InitializeComponent();
             this.nroColegiatura = nroColegiatura;
-            MostrarPacientesEnDataGrid(pacienteService.ListarTodo(nroColegiatura));
+            MostrarPacientes(pacienteService.ListarTodo(nroColegiatura));
         }
 
-        private void MostrarPacientesEnDataGrid(List<Paciente> pacientes)
+        private void MostrarPacientes(List<Paciente> pacientes)
         {
+            dgPacientes.DataSource = null;
             if (pacientes.Count == 0)
             {
-                dgPacientes.DataSource = null;
                 return;
             }
-            dgPacientes.DataSource = null;
-            dgPacientes.DataSource = pacientes;
+            else
+            {
+                dgPacientes.DataSource = pacientes;
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -60,8 +56,8 @@ namespace Lab12
                 return;
             }
 
-            // Mostrar en el ListView
-            MostrarPacientesEnDataGrid(pacienteService.ListarTodo(nroColegiatura));
+            // Mostrar
+            MostrarPacientes(pacienteService.ListarTodo(nroColegiatura));
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

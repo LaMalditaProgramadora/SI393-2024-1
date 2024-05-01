@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="entities\Doctor.cs" />
     <Compile Include="entities\Paciente.cs" />
+    <Compile Include="entities\Reporte.cs" />
     <Compile Include="FormDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,8 +77,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repositories\DoctorRepository.cs" />
     <Compile Include="repositories\PacienteRepository.cs" />
+    <Compile Include="repositories\ReporteRepository.cs" />
     <Compile Include="services\DoctorService.cs" />
     <Compile Include="services\PacienteService.cs" />
+    <Compile Include="services\ReporteService.cs" />
     <EmbeddedResource Include="FormDoctor.resx">
       <DependentUpon>FormDoctor.cs</DependentUpon>
     </EmbeddedResource>

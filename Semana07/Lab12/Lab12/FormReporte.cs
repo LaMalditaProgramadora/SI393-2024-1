@@ -2,12 +2,6 @@
 using Lab12.services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lab12
@@ -16,42 +10,60 @@ namespace Lab12
     {
         private DoctorService doctorService = new DoctorService();
         private PacienteService pacienteService = new PacienteService();
+        private ReporteService reporteService = new ReporteService();
 
         public FormReporte()
         {
             InitializeComponent();
         }
 
-        private void MostrarDoctoresEnDataGrid(List<Doctor> doctores)
+        private void MostrarDoctores(List<Doctor> doctores)
         {
+            dgDoctores.DataSource = null;
             if (doctores.Count == 0)
             {
-                dgDoctores.DataSource = null;
                 return;
             }
-            dgDoctores.DataSource = null;
-            dgDoctores.DataSource = doctores;
+            else
+            {
+                dgDoctores.DataSource = doctores;
+            }
         }
 
-        private void MostrarPacientesEnDataGrid(List<Paciente> pacientes)
+        private void MostrarPacientes(List<Paciente> pacientes)
         {
+            dgPacientes.DataSource = null;
             if (pacientes.Count == 0)
             {
-                dgPacientes.DataSource = null;
                 return;
             }
-            dgPacientes.DataSource = null;
-            dgPacientes.DataSource = pacientes;
+            else
+            {
+                dgPacientes.DataSource = pacientes;
+            }
+        }
+
+        private void MostrarReportes(List<Reporte> reportes)
+        {
+            dgReportes.DataSource = null;
+            if (reportes.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                dgReportes.DataSource = reportes;
+            }
         }
 
         private void btnBuscarDoctoresConPacientesConMayorEdad_Click(object sender, EventArgs e)
         {
-            MostrarDoctoresEnDataGrid(doctorService.ListarDoctoresConPacientesConMasEdad());
+            MostrarDoctores(doctorService.ListarDoctoresConPacientesConMasEdad());
         }
 
         private void btnBuscarDoctoresConMenosPacientes_Click(object sender, EventArgs e)
         {
-            MostrarDoctoresEnDataGrid(doctorService.ListarDoctoresConMenosPacientes());
+            MostrarDoctores(doctorService.ListarDoctoresConMenosPacientes());
         }
 
         private void btnBuscarPacientesPorEspecialidadDelDoctor_Click(object sender, EventArgs e)
@@ -63,7 +75,12 @@ namespace Lab12
                 return;
             }
 
-            MostrarPacientesEnDataGrid(pacienteService.ListarPacientesPorEspecialidadDoctor(tbEspecialidad.Text));
+            MostrarPacientes(pacienteService.ListarPacientesPorEspecialidadDoctor(tbEspecialidad.Text));
+        }
+
+        private void btnBuscarEspecialidadesConMasDoctores_Click(object sender, EventArgs e)
+        {
+            MostrarReportes(reporteService.ListarEspecialidadesConMasDoctores());
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
