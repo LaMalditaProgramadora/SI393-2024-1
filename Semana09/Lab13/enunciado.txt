@@ -1,0 +1,26 @@
+CASO A
+
+A continuación, se describe el contexto de un emprendimiento de jóvenes universitarios (Paseadores) que brindan servicios de paseos a perros en un distrito de la ciudad. Como diferenciador, el emprendimiento ofrece paseos los cuales tendrán un objetivo como socialización, desgaste físico u obediencia.
+
+Se requiere una aplicación en C#, en entorno visual, que permita realizar la gestión de los paseos realizados por cada paseador. Por lo tanto, se solicita implementar los siguientes requisitos funcionales:
+
+* Registrar un paseador. Por cada paseador se deberá registrar: DNI, nombre, celular, años de experiencia paseando perros.
+* Registrar un paseo realizado por un paseador. Por cada paseo realizado se debe registrar el nombre del perro, tamaño del perro, objetivo del paseo, precio cobrado, fecha y turno.
+* Un perro puede tener varios paseos con diferentes paseadores en diferentes días y turnos, pero no puede ser registrado dos veces en una misma fecha y turno.
+* Se necesitan los siguientes reportes:
+	- Cantidad de paseos realizados por objetivo del paseo.
+	- Monto recaudado por tamaño de los perros.
+	- Monto recaudado dado un paseador y una fecha específica.
+	- Cantidad de paseos realizados dado un paseador para perros de tamaño grande.
+ 
+
+La información que se necesita es la siguiente:
+
+Paseador: DNI, nombre, celular, años de experiencia paseando perros.
+Paseo: Código del perro, nombre del perro, tamaño del perro (grande, mediano o pequeño), objetivo del paseo (Socialización, Desgaste físico u Obediencia), precio cobrado, fecha y turno (7am-8am, 9am-10am, 4pm-5pm, 7pm-8pm).
+
+Tomar en cuenta lo siguiente:
+
+No se debe permitir el registro de dos o más paseadores con el mismo DNI.
+Un perro puede tener varios paseos, pero en diferentes turnos y fecha.
+Un perro puede recibir paseos de uno o más paseadores.
