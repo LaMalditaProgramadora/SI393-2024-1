@@ -19,6 +19,7 @@ namespace Lab13
         public FormPaseador()
         {
             InitializeComponent();
+            MostrarPaseadores(paseadorService.ListarTodo());
         }
 
         private void MostrarPaseadores(List<Paseador> paseadores)
@@ -65,7 +66,7 @@ namespace Lab13
         {
             if (dgPaseadores.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Seleccione doctor");
+                MessageBox.Show("Seleccione paseador");
                 return;
             }
 

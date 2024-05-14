@@ -25,9 +25,9 @@ namespace Lab13.services
             }
         }
 
-        public List<Paseo> ListarTodo(String nroColegiatura)
+        public List<Paseo> ListarTodo(String DNI)
         {
-            return paseoRepository.ListarTodo(nroColegiatura);
+            return paseoRepository.ListarTodo(DNI);
         }
 
         public double ObtenerMontoPorPaseadorYFecha(String DNI, DateTime fecha)

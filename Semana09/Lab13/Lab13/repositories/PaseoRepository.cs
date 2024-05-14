@@ -33,19 +33,9 @@ namespace Lab13.repositories
         public double ObtenerMontoPorPaseadorYFecha(String DNI, DateTime fecha)
         {
             List<Paseador> paseadores = PaseadorRepository.ListarTodo();
-            paseadores = paseadores.Where(p => p.DNI.Equals(DNI)).ToList();
-
-            // Opción 1
-            /*
-            List<Paseo> paseos = new List<Paseo>();
-            foreach (Paseador paseador in paseadores)
-            {
-                paseos.AddRange(paseador.Paseos);
-            }
-            */
-
-            // Opción 2
-            List<Paseo> paseos = paseadores.SelectMany(p => p.Paseos).ToList();
+            Paseador paseador = paseadores.Find(pa => pa.DNI.Equals(DNI));
+            if (paseador == null) return 0;
+            List<Paseo> paseos = paseador.Paseos;
 
             paseos = paseos.Where(pa => pa.Fecha.Equals(fecha)).ToList();
             double monto = paseos.Sum(pa => pa.PrecioCobrado);
@@ -55,22 +45,12 @@ namespace Lab13.repositories
         public int ObtenerCantidadPaseosPorPaseadorYTamañoGrande(String DNI)
         {
             List<Paseador> paseadores = PaseadorRepository.ListarTodo();
-            paseadores = paseadores.Where(p => p.DNI.Equals(DNI)).ToList();
-
-            // Opción 1
-            /*
-            List<Paseo> paseos = new List<Paseo>();
-            foreach (Paseador paseador in paseadores)
-            {
-                paseos.AddRange(paseador.Paseos);
-            }
-            */
-
-            // Opción 2
-            List<Paseo> paseos = paseadores.SelectMany(p => p.Paseos).ToList();
+            Paseador paseador = paseadores.Find(pa => pa.DNI.Equals(DNI));
+            if (paseador == null) return 0;
+            List<Paseo> paseos = paseador.Paseos;
 
             paseos = paseos.Where(pa => pa.TamañoPerro.Equals("Grande")).ToList();
-            int cantidad = paseos.Count();
+            int cantidad = paseos.Count;
             return cantidad;
         }
     }

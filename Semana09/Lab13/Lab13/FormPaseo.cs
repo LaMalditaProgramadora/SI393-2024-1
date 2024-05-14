@@ -21,6 +21,7 @@ namespace Lab13
         {
             InitializeComponent();
             this.DNI = DNI;
+            MostrarPaseos(paseoService.ListarTodo(DNI));
         }
 
         private void MostrarPaseos(List<Paseo> paseos)
@@ -59,7 +60,7 @@ namespace Lab13
             bool registrado = paseoService.Registrar(DNI, paseo);
             if (!registrado)
             {
-                MessageBox.Show("Ingrese otro DNI");
+                MessageBox.Show("Ingrese otro Código de Perro, Fecha o Turno");
                 return;
             }
 
