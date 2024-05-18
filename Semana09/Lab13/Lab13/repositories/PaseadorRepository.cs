@@ -13,7 +13,7 @@ namespace Lab13.repositories
 
         public bool Existe(String DNI)
         {
-            return paseadores.Exists(doctor => doctor.DNI.Equals(DNI));
+            return paseadores.Exists(p => p.DNI.Equals(DNI));
         }
 
         public void Registrar(Paseador paseador)
