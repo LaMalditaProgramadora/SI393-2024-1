@@ -1,0 +1,14 @@
+﻿<Window x:Class="Presentacion.WindowPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentacion"
+        mc:Ignorable="d"
+        Title="Menú" Height="216" Width="357.5">
+    <Grid>
+        <Button x:Name="btnVerEmpleados" Content="Ver Empleados" HorizontalAlignment="Left" Margin="117,63,0,0" VerticalAlignment="Top" Width="108" Click="btnVerEmpleados_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="117,88,0,0" VerticalAlignment="Top" Width="108" Cursor="" Click="btnSalir_Click"/>
+
+    </Grid>
+</Window>

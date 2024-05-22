@@ -1,0 +1,29 @@
+﻿<Window x:Class="Presentacion.WindowEmpleado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentacion"
+        mc:Ignorable="d"
+        Title="Empleados" Height="335" Width="693">
+    <Grid>
+        <TextBox x:Name="tbDni" HorizontalAlignment="Left" Height="23" Margin="78,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="23" Margin="78,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbPuesto" HorizontalAlignment="Left" Margin="78,73,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.133,0.364">
+            <ComboBoxItem Content="Auxiliar" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Asistente" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Administrador" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="58,136,0,0" VerticalAlignment="Top" Width="119" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="58,186,0,0" VerticalAlignment="Top" Width="119" Click="btnEliminar_Click"/>
+        <Button x:Name="bnOrdenarPorSueldo" Content="Ordenar por Sueldo" HorizontalAlignment="Left" Margin="58,211,0,0" VerticalAlignment="Top" Width="119" Click="bnOrdenarPorSueldo_Click"/>
+        <Button x:Name="btnLimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="58,236,0,0" VerticalAlignment="Top" Width="119" Click="btnLimpiar_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="58,261,0,0" VerticalAlignment="Top" Width="119" Click="btnSalir_Click"/>
+        <DataGrid x:Name="dgEmpleados" HorizontalAlignment="Left" Height="264" Margin="225,17,0,0" VerticalAlignment="Top" Width="434" SelectionChanged="dgEmpleados_SelectionChanged"/>
+        <Label Content="DNI:" HorizontalAlignment="Left" Margin="40,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.364,0.423"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="17,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.911,0.962"/>
+        <Label Content="Puesto:" HorizontalAlignment="Left" Margin="24,71,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnVerReuniones" Content="Ver Reuniones" HorizontalAlignment="Left" Margin="58,161,0,0" VerticalAlignment="Top" Width="119" Click="btnVerReuniones_Click"/>
+
+    </Grid>
+</Window>

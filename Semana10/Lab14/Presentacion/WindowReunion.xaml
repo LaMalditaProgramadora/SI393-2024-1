@@ -1,0 +1,25 @@
+﻿<Window x:Class="Presentacion.WindowReunion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentacion"
+        mc:Ignorable="d"
+        Title="Reuniones" Height="236" Width="709">
+    <Grid>
+        <DatePicker x:Name="dpFecha" HorizontalAlignment="Left" Margin="79,16,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbTurno" HorizontalAlignment="Left" Margin="79,45,0,0" VerticalAlignment="Top" Width="145">
+            <ComboBoxItem Content="9am-10am" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="10am-11am" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="11am-12pm" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <TextBox x:Name="tbAsunto" HorizontalAlignment="Left" Height="23" Margin="79,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+        <Label Content="Fecha:" HorizontalAlignment="Left" Margin="31,16,0,0" VerticalAlignment="Top"/>
+        <Label Content="Turno:" HorizontalAlignment="Left" Margin="30,45,0,0" VerticalAlignment="Top"/>
+        <Label Content="Asunto:" HorizontalAlignment="Left" Margin="24,72,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dgReuniones" HorizontalAlignment="Left" Height="163" Margin="263,16,0,0" VerticalAlignment="Top" Width="413"/>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="79,134,0,0" VerticalAlignment="Top" Width="75" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="79,159,0,0" VerticalAlignment="Top" Width="75" Click="btnSalir_Click"/>
+
+    </Grid>
+</Window>
