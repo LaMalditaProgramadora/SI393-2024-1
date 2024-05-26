@@ -22,7 +22,7 @@ namespace Presentacion
     public partial class WindowEmpleado : Window
     {
         private NEmpleado nEmpleado = new NEmpleado();
-        private EEmpleado empleadoSeleccionado = new EEmpleado();
+        private EEmpleado empleadoSeleccionado = null;
 
         public WindowEmpleado()
         {
