@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ModelEF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Desarrollador">
+          <Key>
+            <PropertyRef Name="Id_Desarrollador" />
+          </Key>
+          <Property Name="Id_Desarrollador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Videojuego">
+          <Key>
+            <PropertyRef Name="Id_Videojuego" />
+          </Key>
+          <Property Name="Id_Videojuego" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="60" />
+          <Property Name="Valoracion" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Id_Desarrollador" Type="int" />
+        </EntityType>
+        <Association Name="FK_Videojuego_Desarrollador">
+          <End Role="Desarrollador" Type="Self.Desarrollador" Multiplicity="0..1" />
+          <End Role="Videojuego" Type="Self.Videojuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Desarrollador">
+              <PropertyRef Name="Id_Desarrollador" />
+            </Principal>
+            <Dependent Role="Videojuego">
+              <PropertyRef Name="Id_Desarrollador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelEFStoreContainer">
+          <EntitySet Name="Desarrollador" EntityType="Self.Desarrollador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Videojuego" EntityType="Self.Videojuego" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Videojuego_Desarrollador" Association="Self.FK_Videojuego_Desarrollador">
+            <End Role="Desarrollador" EntitySet="Desarrollador" />
+            <End Role="Videojuego" EntitySet="Videojuego" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModelEF" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Desarrollador">
+          <Key>
+            <PropertyRef Name="Id_Desarrollador" />
+          </Key>
+          <Property Name="Id_Desarrollador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Videojuego" Relationship="Self.FK_Videojuego_Desarrollador" FromRole="Desarrollador" ToRole="Videojuego" />
+        </EntityType>
+        <EntityType Name="Videojuego">
+          <Key>
+            <PropertyRef Name="Id_Videojuego" />
+          </Key>
+          <Property Name="Id_Videojuego" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Valoracion" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Id_Desarrollador" Type="Int32" />
+          <NavigationProperty Name="Desarrollador" Relationship="Self.FK_Videojuego_Desarrollador" FromRole="Videojuego" ToRole="Desarrollador" />
+        </EntityType>
+        <Association Name="FK_Videojuego_Desarrollador">
+          <End Role="Desarrollador" Type="Self.Desarrollador" Multiplicity="0..1" />
+          <End Role="Videojuego" Type="Self.Videojuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Desarrollador">
+              <PropertyRef Name="Id_Desarrollador" />
+            </Principal>
+            <Dependent Role="Videojuego">
+              <PropertyRef Name="Id_Desarrollador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDEFEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Desarrollador" EntityType="Self.Desarrollador" />
+          <EntitySet Name="Videojuego" EntityType="Self.Videojuego" />
+          <AssociationSet Name="FK_Videojuego_Desarrollador" Association="Self.FK_Videojuego_Desarrollador">
+            <End Role="Desarrollador" EntitySet="Desarrollador" />
+            <End Role="Videojuego" EntitySet="Videojuego" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelEFStoreContainer" CdmEntityContainer="BDEFEntities">
+          <EntitySetMapping Name="Desarrollador">
+            <EntityTypeMapping TypeName="ModelEF.Desarrollador">
+              <MappingFragment StoreEntitySet="Desarrollador">
+                <ScalarProperty Name="Id_Desarrollador" ColumnName="Id_Desarrollador" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Videojuego">
+            <EntityTypeMapping TypeName="ModelEF.Videojuego">
+              <MappingFragment StoreEntitySet="Videojuego">
+                <ScalarProperty Name="Id_Videojuego" ColumnName="Id_Videojuego" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Valoracion" ColumnName="Valoracion" />
+                <ScalarProperty Name="Id_Desarrollador" ColumnName="Id_Desarrollador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
