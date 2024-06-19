@@ -34,7 +34,7 @@ namespace Presentacion
             this.dgLibros = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tbNombreEditorial = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp = new System.Windows.Forms.Button();
             this.btnObtenerPromedioDeNroPaginasDeLibrosDelGeneroTerror = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPromedio = new System.Windows.Forms.Label();
@@ -85,15 +85,15 @@ namespace Presentacion
             this.tbNombreEditorial.Size = new System.Drawing.Size(161, 20);
             this.tbNombreEditorial.TabIndex = 12;
             // 
-            // button1
+            // btnBuscarLibrosConAutoresConMasDe5AñosDeExp
             // 
-            this.button1.Location = new System.Drawing.Point(15, 85);
-            this.button1.Name = "btnBuscarLibrosConAutoresConMasDe5AñosDeExp";
-            this.button1.Size = new System.Drawing.Size(251, 41);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Buscar Libros Con Autores Con Más De 5 Años De Experiencia";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp_Click);
+            this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp.Location = new System.Drawing.Point(15, 85);
+            this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp.Name = "btnBuscarLibrosConAutoresConMasDe5AñosDeExp";
+            this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp.Size = new System.Drawing.Size(251, 41);
+            this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp.TabIndex = 24;
+            this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp.Text = "Buscar Libros Con Autores Con Más De 5 Años De Experiencia";
+            this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp.UseVisualStyleBackColor = true;
+            this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp.Click += new System.EventHandler(this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp_Click);
             // 
             // btnObtenerPromedioDeNroPaginasDeLibrosDelGeneroTerror
             // 
@@ -131,14 +131,14 @@ namespace Presentacion
             this.Controls.Add(this.lblPromedio);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnObtenerPromedioDeNroPaginasDeLibrosDelGeneroTerror);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscarLibrosConAutoresConMasDe5AñosDeExp);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBuscarLibrosPorNombreDeEditorial);
             this.Controls.Add(this.dgLibros);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbNombreEditorial);
             this.Name = "FormReporte";
-            this.Text = "FormReporte";
+            this.Text = "Reportes";
             ((System.ComponentModel.ISupportInitialize)(this.dgLibros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -152,7 +152,7 @@ namespace Presentacion
         private System.Windows.Forms.DataGridView dgLibros;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbNombreEditorial;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscarLibrosConAutoresConMasDe5AñosDeExp;
         private System.Windows.Forms.Button btnObtenerPromedioDeNroPaginasDeLibrosDelGeneroTerror;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPromedio;

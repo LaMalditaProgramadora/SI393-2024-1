@@ -124,7 +124,7 @@ namespace Presentacion
             int libroId = int.Parse(dgLibros.SelectedRows[0].Cells["LibroId"].Value.ToString());
 
             // Diálogo de confirmación
-            DialogResult dialog = MessageBox.Show("¿Está seguro de elimianr el libro con LibroId: " + libroId, "", MessageBoxButtons.YesNo);
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar el libro con LibroId: " + libroId, "", MessageBoxButtons.YesNo);
 
             if (dialog.Equals(DialogResult.Yes))
             {
